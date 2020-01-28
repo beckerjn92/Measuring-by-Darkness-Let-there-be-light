@@ -1,5 +1,5 @@
 # Measuring-by-Darkness-Let-there-be-light-
-<a href="https://doi.org/10.5281/zenodo.XXXX"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.XXXX.svg" alt="DOI"></a>
+<a href="https://zenodo.org/badge/latestdoi/236811551"><img src="https://zenodo.org/badge/236811551.svg" alt="DOI"></a>
 
 Is optical "nulling" the best strategy to obtain information of an unknown amplitude-phase object when measured in an adaptive Mach-Zehnder type of interferometer?
 
