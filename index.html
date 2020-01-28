@@ -1,0 +1,330 @@
+<!doctype html>
+<!-- 
+##############################################################
+Ignore this boilerplate if you're just trying to edit the text.
+Skip to the part that says 'The real text begins here'
+##############################################################
+Based on this theme: https://github.com/broccolini/dinky , which mentioned that attribution is appreciated. Thanks, broccolini!
+-->
+<html lang="en">
+  <head>
+    <base target="_blank">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="citation_title" content="What is the signal-to-noise ratio of phase-contrast imaging? Can it be infinite?">
+    <meta name="citation_author" content="Andrew G. York">
+    <meta name="citation_publication_date" content="2018/10/15">
+    <meta name="citation_journal_title" content="Github.io">
+    <meta name="citation_pdf_url" content="https://andrewgyork.github.io/adaptive_interference_inference/adaptive_interference_inference%20by%20AndrewGYork.pdf">
+    <title>adaptive_interference_inference by AndrewGYork</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/prism.css">
+    <!--[if lt IE 9]>
+    <script src="javascript/html5shiv/html5shiv.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <script src="javascript/scale-fix/scale.fix.js"></script>
+    <script src="javascript/python-highlighting/prism.js"></script>
+    <script async  src="javascript/Minimal-MathJax/MathJax.js?config=TeX-AMS_CHTML"></script>
+    <script src="javascript/update_figures.js"></script>
+    <script src="javascript/reference_list/reference_list.js"></script>
+    <script src="javascript/google-analytics/analytics.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Adaptive interference inference</h1>
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/AndrewGYork/adaptive_interference_inference/zipball/master">Download ZIP</a></li>
+          <li><a class="buttons github" href="https://github.com/AndrewGYork/adaptive_interference_inference">View On GitHub</a></li>
+          <li><a class="buttons pdf" href="./adaptive_interference_inference%20by%20AndrewGYork.pdf">Download PDF</a></li>
+        </ul>
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/AndrewGYork">AndrewGYork</a> in the <a class="header name" href="https://andrewgyork.github.io/">York lab</a>, and was funded by <a class="header name" href="https://www.calicolabs.com/">Calico Life Sciences LLC</a> </p>
+      </header>
+<!-- 
+##############################################################
+The real text begins here.
+##############################################################
+ -->
+<section>
+<h1>Micro-publication</h1>
+<h2>What is the signal-to-noise ratio of phase-contrast imaging? Can it be infinite?</h2>
+<p class="author_list">Andrew G. York<sup>1*</sup>, Sanjay R. Varma<sup>1</sup></p>
+<p class="author_affiliations"><sup>1</sup>Calico Life Sciences LLC, South San Francisco, CA 94080, USA</p>
+<p class="contact_email"><sup>*</sup>Permanent email: <a href="mailto:andrew.g.york+inference@gmail.com" target="_self">andrew.g.york+inference@gmail.com</a></p>
+<p class="contact_email"><sup>*</sup>Institutional email: <a href="mailto:agy+inference@calicolabs.com" target="_self">agy+inference@calicolabs.com</a></p>
+<h3>Abstract</h3>
+<p class="abstract">I'd like to invite you to consider one of my favorite physics questions, about how much information we can squeeze out of optical measurements. Even if you don't know any physics, the question translates cleanly to a pure mathematical puzzle, or alternatively, a coding challenge that might be well suited to machine-learning approaches. This is an old question, but an important one: optical measurements are an essential tool in every field of science and industry, and any improvement to our ability to extract information from light would have wide-ranging impact.
+</p>
+<h3>Intended audience</h3>
+<p class="abstract">Anyone who likes math puzzles, coding challenges, and/or physics questions. Click the appropriate link below to jump to the relevant section:
+</p>
+<table>
+  <tr>
+    <td><a href="./index.html#math_puzzle" target="_self">Click here if you like math</a></td>
+    <td><a href="./index.html#coding_challenge" target="_self">Click here if you like coding</a></td>
+    <td><a href="./index.html#physics_question" target="_self">Click here if you like physics</a></td>
+  </tr>
+</table>
+
+<h3>Peer review status</h3>
+<p>Pre-print published October 15, 2018 (This article is not yet peer-reviewed)</p>
+<p>Cite as: <a href="https://doi.org/10.5281/zenodo.1463273">doi:10.5281/zenodo.1463273</a></p>
+
+<h3 class="onlyprint">
+Note that this is a limited PDF or print version; animated and interactive figures are disabled. For the full version of this article, please visit <a href="https://andrewgyork.github.io/adaptive_interference_inference">https://andrewgyork.github.io/adaptive_interference_inference</a></h3>
+
+<noscript>
+<h3>Your browser doesn't seem to support Javascript. This document uses Javascript for interactive figures, math typesetting, and to automatically generate the reference list. Either activate Javascript, or use the "Download PDF" link above if you want properly typeset math and a reference list.</h3></noscript>
+
+<h3 id="math_puzzle">
+A math puzzle</h3>
+<p>Let's play a game. I know a complex number \(x\). Your job is to infer \(x\). You know that \(|x| \leq 1\). <a href="./index.html#note_1" target="_self" title="For Bayesians: I'll choose the magnitude |x| from a uniform distribution between 0 and 1, and I'll choose the phase &ang;x from a uniform distribution between 0 and 2&pi;. Bonus points if your algorithm works robustly (or can be easily adapted) if 'x' is drawn from a different distribution.
+">*</a></p>
+
+<p>You may choose any two complex numbers, \(a\) and \(b\). I will calculate \(y = |ax + b|^2\). Then I'll draw randomly from a Poisson distribution with expectation value \(y\), and tell you the (stochastic) result \(r\).</p>
+
+<p>We repeat this process as many times as you'd like: on round \(i\), you choose \(a_i\) and \(b_i\), I'll calculate \(y_i\) and I'll tell you \(r_i\). Your "cost" for round \(i\) is the quantity \(|a_i|^2\), and you have a "budget" of \(A\). If you go over budget (meaning, if you choose a value \(a_N\) such that \(A \lt \sum_i^N |a_i|^2\)), I won't answer, and the game is over.</p>
+
+<p>What algorithm should you follow to infer \(x\) as accurately<a href="./index.html#note_2" target="_self" title="Note I didn't define &ldquo;accuracy&rdquo;! I'll leave this intentionally flexible. I suspect the &ldquo;ideal&rdquo; algorithm will depend on the choice of definition, but I'm indifferent as long as your definition of accuracy seems sane to me.">**</a> as possible, for a given value of \(A\)? Ideally, express this algorithm as a short Python/Numpy script, ideally in a GitHub repository that I can link to here. Feel free to invite anyone who's interested to play.</p>
+
+<p>Let the best algorithm win!</p>
+
+<ul>
+  <li>Can you do any better than the algorithm \(a_0 = \sqrt{A}\), \(b_0 = 0\) ?</li>
+  <li>Can you do any better than an algorithm where \(a\) and \(b\) are chosen in advance, independently of \(r_k\)? For example: \(a_k = \sqrt{A/N}\) and \(b_k = \sqrt{A/N}e^{2\pi i k / N}\)</li>
+</ul>
+
+<h4>Notes:</h4>
+<p id="note_1">
+<a href="./index.html#note_1" target="_self">*</a> For Bayesians: I'll choose the magnitude \(|x|\) from a uniform distribution between \(0\) and \(1\), and I'll choose the phase \(\angle x\) from a uniform distribution between \(0\) and \(2\pi\). Bonus points if your algorithm works robustly (or can be easily adapted) if \(x\) is drawn from a different distribution.
+</p>
+
+<p id="note_2">
+<a href="./index.html#note_2" target="_self">**</a> Note I didn't define "accuracy"! I'll leave this intentionally flexible. I suspect the "ideal" algorithm will depend on the choice of definition, but I'm indifferent as long as your definition of accuracy seems sane to me.</p>
+
+<h3 id="coding_challenge">
+A coding challenge</h3>
+<p>I've implemented an 'oracle' that will play <a href="./index.html#math_puzzle" target="_self">a game</a> with you. You can find a copy of the Python 3 code in our <code>adaptive_interference_inference</code> GitHub repository: <a href="https://github.com/AndrewGYork/adaptive_interference_inference/blob/master/code/game.py">./code/game.py</a></p>
+<pre><code class="language-python">import numpy as np
+
+class Oracle:
+    def __init__(self, budget):
+        assert budget > 0
+        self.budget = budget
+        self.total_cost = 0
+        self.round = 0
+        self.a_history = []
+        self.b_history = []
+        self.r_history = []
+        self.game_over = False
+        
+        # Generate some secret numbers.
+        # Don't peek!
+        self._magnitude = np.random.random(1)
+        self._phase = 2*np.pi*np.random.random(1)
+        self._x = self._magnitude * np.exp(1j*self._phase)
+        return None
+
+    def ask(self, a, b):
+        if self.game_over:
+            return None
+        self.total_cost += np.abs(a)**2
+        if self.total_cost > self.budget:
+            self.game_over = True
+            return None
+        y = np.abs(a*self._x + b)**2
+        r = np.random.poisson(y)
+        self.round += 1
+        self.a_history.append(a)
+        self.b_history.append(b)
+        self.r_history.append(r)
+        return r
+</code></pre>
+<p></p>
+<p>To play this game, import <code>game.py</code>, choose a value for <code>budget</code>, and create an instance of the <code>Oracle</code> object. Try to infer the value of <code>Oracle._magnitude</code> and/or <code>Oracle._phase</code> as accurately as you can, using only the return values of calls to the <code>Oracle.ask(a, b)</code> method. You are allowed to inspect the code of <code>game.py</code>, but after you instantiate an <code>Oracle</code> object, you are <em>not</em> allowed to inspect its <code>Oracle._x</code>, <code>Oracle._magnitude</code>, or <code>Oracle._phase</code> attributes; that's cheating!<a href="./index.html#note_3" target="_self" title="For machine-learners: feel free to inspect `Oracle._x', `Oracle._magnitude', and/or `Oracle._phase' while you're training and validating a model, just be careful that your *model* doesn't consult these values.">***</a></p>
+<p>Here's an example of how you might use this oracle to play the game:</p>
+<pre><code class="language-python">import numpy as np
+import game
+
+print("An example game")
+oracle = game.Oracle(budget=1000)
+print("Budget:", oracle.budget, '\n')
+num_phases = 5
+for phase_angle in np.arange(0, 2*np.pi, 2*np.pi/num_phases):
+    print('Round', oracle.round)
+    a = np.sqrt(oracle.budget / num_phases) * (1 - 1e-12)
+    b = a * np.exp(1j*phase_angle)
+    print(' a: %07s    (intensity)\n'%('%0.2f'%(np.abs(a)**2)),
+           '   %07s*pi (phase)'%('%0.2f'%(np.angle(a)/np.pi)))
+    print(' b: %07s    (intensity)\n'%('%0.2f'%(np.abs(b)**2)),
+           '   %07s*pi (phase)'%('%0.2f'%(np.angle(b)/np.pi)))
+    response = oracle.ask(a, b)
+    print('oracle.ask(a, b):', response)
+    print('Total cost: %0.2f / %0.2f\n'%(oracle.total_cost,
+                                              oracle.budget))
+print("Game over.")
+print("From these responses, how well can you infer 'x'?")
+print("\nIf you'd made smarter choices of 'a' and 'b' on each round,\n",
+      "could you do a better job inferring 'x'?", sep='')</code></pre>
+
+<p>Note that this is just an example of how to ask the oracle questions. I didn't specify a  method to infer <code>Oracle._x</code> based on the oracle's responses to <code>Oracle.ask(a, b)</code>. That's the game!</p>
+
+<p>What's the best algorithm you can implement to infer the value of <code>Oracle._x</code> as accurately<a href="./index.html#note_2" target="_self" title="Note I didn't define &ldquo;accuracy&rdquo;! I'll leave this intentionally flexible. I suspect the &ldquo;ideal&rdquo; algorithm will depend on the choice of definition, but I'm indifferent as long as your definition of accuracy seems sane to me.">**</a> as possible, for a given value of <code>Oracle.budget</code>? Ideally, express this algorithm as a short Python/Numpy script, ideally in a GitHub repository that I can link to here. Feel free to invite anyone who's interested to play.</p>
+
+<h4>Notes:</h4>
+<p id="note_3">
+<a href="./index.html#note_3" target="_self" >***</a> For machine-learners: feel free to inspect <code>Oracle._x</code>, <code>Oracle._magnitude</code>, and/or <code>Oracle._phase</code> while you're training and validating a model, just be careful that your <em>model</em> doesn't consult these values.
+</p>
+
+<h3 id="physics_question">
+A physics question</h3>
+<p>Suppose we want to measure the complex optical transmission coefficient \(x\) of a thin uniform flat-faced slab of partially transparent unknown material<a href="./index.html#note_4" target="_self" title="This is an extremely common, extremely general problem. For example, this is the one-voxel limit of nearly the entire field of transmitted light microscopy."><sup>&dagger;</sup></a>. When we transmit a collimated beam of monochromatic light through the slab, the slab reduces the beam's amplitude by \(|x|\), and shifts the beam's phase by \(\angle x\). How accurately can we measure this change in intensity and phase?</p>
+
+<p>Consider the ideal interferometric measurement shown in Figure 1 below:</p>
+
+<figure id="Figure_1">
+<img src="./images/interferometer/interferometer.png"
+ alt="Figure 1" id="Figure_1_image">
+<table class="figure_controls">
+  <tr>
+  <td style="text-align: center"><br>Measurement type:<br><br><br> <em>(Click the radio buttons to change the figure)</em> </td><td><form id="Figure_1_measurement" onchange="update_figure_1()">
+    <input type="radio" name="measurement" id="interferometer.png" checked="checked">Interferometric measurement<br>
+    <input type="radio" name="measurement" id="interferometer_x_is_one.png">Object-free interferometric measurement \((x = 1)\)<br>
+    <input type="radio" name="measurement" id="interferometer_a_is_zero.png">Background intensity measurement \((a = 0)\)<br>
+    <input type="radio" name="measurement" id="interferometer_b_is_zero.png">Transmitted intensity measurement \((b = 0)\)<br>
+  </form></td></tr>
+</table>
+<figcaption><strong>Figure 1: An unknown material sits in one arm of an ideal optical interferometer</strong>. The interfering beams are collimated, monochromatic, perfectly coherent, and overlap perfectly at the outputs. The average number of photoelectrons \(y\) measured per trial at Detector 1 is \(|ax + b|^2\), where \(a\), \(b\), and \(x\) are complex numbers. Modulators \(a\) and \(b\) let us tune the amplitude and phase of \(a\) and \(b\) respectively. The absorption and phase shift due to the material determine the amplitude and phase of \(x\). </figcaption>
+</figure><p></p>
+
+<p>We make a measurement by choosing the amplitude and phase for each modulator and counting photoelectron "clicks" at Detector 1 for some time interval. Suppose that our source and our interferometer are perfectly stable, and our detector never gives false detections<a href="./index.html#note_5" target="_self" title="This is consistent with the laws of physics, but an awful lot of work to achieve in practice."><sup>&dagger;&dagger;</sup></a>. Even in this ideal case, the number of "clicks" we count is inherently stochastic. The number of clicks per trial at Detector 1 is drawn from a Poisson distribution<a href="./index.html#note_6" target="_self" title="For a discussion of this assertion, and many fascinating related issues, read the beautifully written second chapter of *The Quantum Challenge: Modern Research on the Foundations of Quantum Mechanics* by Greenstein and Zajonc."><sup>&dagger;&dagger;&dagger;</sup></a> with expected value \(y=|ax + b|^2\). How shall we infer \(x\)?</p>
+
+<p>With the probe beam blocked (Fig. 1 with <code>Measurement type: Background intensity measurement</code>), we can calibrate the reference beam signal \(|b|^2\) due to Modulator \(b\). Since the mean \(y\) of a Poisson process grows faster than its standard deviation \(\sqrt{y}\), we can calibrate the output amplitude of Modulator \(b\) with arbitrarily high signal-to-noise ratio \(y / \sqrt{y}\), by chasing the limit \(|b|^2 \rightarrow \infty\). Next, we can remove the object (Fig. 1 with <code>Measurement type: Object-free interferometric measurement</code>) and use a similar procedure to calibrate the output amplitude of Modulator \(a\), and also to calibrate how the modulators tune the relative phase \(\angle\frac{a}{b}\) between the probe and reference beams.</p>
+
+<p>With perfect knowledge and control of \(a\) and \(b\), we're ready to measure the complex transmission \(x\) of our object. Let's add one additional constraint: for this measurement, we can't use an infinite amount of light. Perhaps we're time-limited; our source has finite brightness, we have many objects to measure today, and we can't spend as much time on one measurement as we did on calibration. Perhaps we're dose-limited; too much light might melt or burn our unknown object. Either way, if the cumulative "light dose" \(\sum_i^N|a_i|^2\) at trial \(N\) exceeds our "dose budget" \(A\), we must stop measuring, and Poisson noise limits our signal-to-noise ratio. What is our signal, and what is our noise?</p>
+
+<p>Let's start with a simple measurement of \(|x|\) (how much the object reduces the probe beam's amplitude; Fig. 1 with <code>Measurement type: Transmitted intensity measurement</code>). Each trial, Detector 1 yields a number of "clicks" drawn stochastically from a Poisson distribution with expectation value \(|ax|^2\). Our noise is the standard deviation of this distribution, \(|ax|\). Given our perfect knowledge of \(a\), our mean signal is the <em>change</em> in intensity \(|a|^2 - |ax|^2\), yielding a signal-to-noise ratio (SNR) of \(|\frac{a}{x}| - |ax|\) for a single trial. Note that in the \(|x| \rightarrow 1\) limit of perfect transmission, the SNR tends to zero. Similarly, in the \(x \rightarrow 0\) limit of perfect opacity, the SNR tends to infinity! This actually makes sense: an object with sufficiently high transmission becomes invisible to a transmission measurement, and a perfectly opaque object yields a detectable and fluctuation-free signal. Perhaps most interestingly, if you count even a single "click", you know with complete confidence \(|x| \neq 0\) and the object was not perfectly opaque.</p>
+
+<p>If we want to measure phase \(\angle{x}\) in addition to amplitude \(|x|\), we must use interference (Fig. 1 with <code>Measurement type: Interferometric measurement</code>). Our noise in this case is \(|ax + b|\), and our signal is still the change in intensity due to the object, \(|a + b|^2 - |ax + b|^2\), yielding an SNR of \(\frac{|a + b|^2}{|ax + b|} - |ax + b|\). Like transmission measurements, our SNR can be infinite, but since we control \(a\) and \(b\), we can achieve infinite SNR regardless of the value of \(x\)! All we have to do is choose \(\frac{b}{a} = -x\), and we're guaranteed to get a detectable, fluctuation-free signal with infinite SNR: zero "clicks". This is presumably insane, but it raises some fun questions.</p>
+
+<p>In order to achieve "infinite SNR", we must have chosen \(\frac{b}{a} = -x\). But if we don't know \(x\) yet, how are we supposed to choose \(a\) and \(b\)? Also, observing zero clicks doesn't guarantee \(x = \frac{-b}{a}\); maybe we just didn't wait long enough for a click. Infinite SNR is therefore quite different from infinite precision. However, if we observe even a single click on Detector 1, we know with certainty \(x \neq \frac{-b}{a}\). This suggests that if we view measurement as asking a question to the unknown object, the question "What are you?" may be very different from the question "Are you <em>this</em>?". This second question has only two possible answers: "maybe" (zero clicks after using up your entire dose budget) and "no" (the first click, at which point you should probably halt the measurement and re-tune your modulators). Clearly there are important clues encoded in how quickly the "no" is delivered.</p>
+
+<p>So, what algorithm should we use for tuning our modulators and drawing conclusions about \(x\)? My suspicion is the optimal measurement will use an extremely small fixed value for \(a\) (virtually guaranteeing zero or one "clicks" per trial), and choose a new \(|b|\) and \(\angle{b}\) after every time the detector clicks, hunting for the informative special case \(b = -ax\). I also suspect that the new choice of \(b\) should be informed by how long each previous measurement took to produce its first click.</p>
+
+<p>But I'm not going to solve this myself; I'd rather play the game with you. What algorithm would you use? Ideally, express this algorithm as a short Python/Numpy script, ideally in a GitHub repository that I can link to here. Feel free to invite anyone who's interested to play.</p>
+
+<p>What does this teach us about measurement?</p>
+
+<ul>
+  <li>Does "infinite SNR" in a single trial actually indicate a high-precision measurement?</li>
+  <li>Do we actually benefit from "hunting" for perfect destructive interference at Detector 1, or would we be better off searching a diverse set of \(a\), \(b\) combinations?</li>
+  <li>How much better could you do if you also had access to "clicks" from Detector 2?</li>
+</ul>
+
+<h4>Notes:</h4>
+<p id="note_4">
+<a href="./index.html#note_4" target="_self"><sup>&dagger;</sup></a>This is an extremely common, extremely general problem. For example, this is the one-voxel limit of nearly the entire field of transmitted light microscopy.</p>
+
+<p id="note_5">
+<a href="./index.html#note_5" target="_self"><sup>&dagger;&dagger;</sup></a> This is consistent with the laws of physics, but an awful lot of work to achieve in practice.
+</p>
+
+<p id="note_6">
+<a href="./index.html#note_6" target="_self"><sup>&dagger;&dagger;&dagger;</sup></a> For a discussion of this assertion, and many fascinating related issues, read the beautifully written second chapter of <a href="https://books.google.com/books?id=5t0tm0FB1CsC&lpg=PP1&dq=the%20quantum%20challenge&pg=PA24#v=onepage&q&f=false"><em>The Quantum Challenge: Modern Research on the Foundations of Quantum Mechanics</em></a> by Greenstein and Zajonc.
+</p>
+
+<h3 id="origin_story">What does this have to do with phase contrast microscopy?</h3>
+
+<p>In 1902, Siedentopf and Zsigmondy described the "ultramicroscope"
+
+[<a class="citation" href="https://doi.org/10.1002/andp.19023150102" title="Uber Sichtbarmachung und Größenbestimmung ultramikoskopischer Teilchen, mit besonderer Anwendung auf Goldrubingläser; H. Siedentopf and R. Zsigmondy; Ann. Phys., 315: 1-39 (1902)">Siedentopf 1902</a>],
+
+an early form of "dark-field" microscopy. By 1920, dark-field microscopy was a mature, well-established technique
+
+[<a class="citation" href="https://doi.org/10.2307/3221838" title="Modern dark-field microscopy and the history of its development; S.H. Gage; Transactions of the American Microscopical Society Vol. 39, No. 2 pp. 95-141 Apr (1920)">Gage 1920</a>], and Zsigmondy was awarded the 1925 Chemistry Nobel <q>for his demonstration of the heterogenous nature of colloid solutions <a href="https://www.nobelprize.org/prizes/chemistry/1925/summary/">and for the methods he used, which have since become fundamental...</a></q>.
+</p>
+
+<figure id="Figure_2">
+<img style="width:80%;" src="images/animations/dark_field/animation.gif" alt="Figure 2" id="Figure_2_vid">
+<figcaption><strong>Figure 2: Animation illustrating the key concepts of dark-field microscopy.</strong> A red light pulse illuminates a point-like particle (small circle, left). The particle scatters some of this illumination light (expanding red circle). A lens (black oval, left) focuses the illumination pulse onto a beam block (small rectangle, center), which is opaque and absorbs the illumination.  Any scattered light that passes through the first lens and is not absorbed by the beam block will pass through a second lens (black oval, right) toward a multi-pixel detector (camera icon, far right), forming an image of the scattering particle on a dark background.</figcaption>
+</figure>
+<p></p>
+
+<p>Figure 2 above illustrates the essential concept of dark-field microscopy: only the portion of the illumination beam which is scattered by the sample can reach the detector. Scattering objects in the sample appear as if they are emitting light, and this light is imaged onto the detector on a dark background.</p>
+
+<p>Decades later, Frits Zernike demonstrated "phase contrast" microscopy, 
+
+ [<a class="citation" href="https://doi.org/10.1038/ncb1942" title="Das Phasenkontrastverfahren bei der mikroskopischen Beobachtung; F. Zernike; Z. technische Physik vol 16, p454–457 (1935)">Zernike 1935</a>,
+<a class="citation" href="https://doi.org/10.1016/S0031-8914(42)80035-X" title="Phase contrast, a new method for the microscopic observation of transparent objects; F. Zernike; Physica, Vol 9, p686-698 (1942)">Zernike 1942</a>].
+
+Zernike was awarded the 1953 Nobel prize in Physics <q>for his demonstration of the phase contrast method, especially for his <a href="https://www.nobelprize.org/prizes/physics/1953/summary/">invention of the phase contrast microscope</a>.</q>
+
+[<a class="citation" href="https://doi.org/10.1126/science.121.3141.345" title="How I discovered phase contrast; F. Zernike; Science 121.3141 (1955): 345-349.">Zernike 1955</a>].</p>
+
+<figure id="Figure_3">
+<img style="width:80%;" src="images/animations/positive_phase_contrast/animation.gif" alt="Figure 3" id="Figure_3_vid">
+<table class="figure_controls">
+  <tr>
+  <td style="text-align: center">Relative phase between background and scattered light:<br><em>(Click the radio buttons to change the figure)</em> </td><td><form id="Figure_3_measurement" onchange="update_figure_3()">
+    <input type="radio" name="measurement" id="positive_phase_contrast/animation.gif" checked="checked">Constructive interference<br>
+    <input type="radio" name="measurement" id="negative_phase_contrast/animation.gif">Destructive interference
+  </form></td></tr>
+</table>
+<figcaption><strong>Figure 3: Animation illustrating the key concepts of phase-contrast microscopy.</strong> A red light pulse illuminates a point-like particle (small circle, left). The particle scatters some of this illumination light (expanding red circle). A lens (black oval, left) focuses the illumination pulse onto a beam block (small rectangle, center), which is partially opaque and attenuates the illumination, and also retards its phase.  Any scattered light that passes through the first lens and is not absorbed by the beam block will pass through a second lens (black oval, right) toward a multi-pixel detector (camera icon, far right), forming an image of the scattering particle on a bright background.</figcaption>
+</figure>
+<p></p>
+
+<p>As illustrated in Figure 3 above, phase contrast microscopy is conceptually similar to dark-field microscopy. To convert our cartoon dark-field microscope to a phase-contrast microscope, we simply replace the opaque beam block with a partially transmissive one. The attenuated illumination beam yields a uniform background on the detector, which interferes coherently with the scattered light image. The partially transmissive beam block also retards the phase of the background, and we can control this retardation (e.g. by tuning the thickness of the block).</p>
+
+<p>For an appropriate retardation, the interference between the scattered light and the uniform background can be primarily constructive (Figure 3 with <code>Relative phase between background and scattered light: Constructive interference</code>). In this mode, scattering objects in the sample appear as if they are emitting light, and this light is imaged onto the detector on a bright background.</p>
+
+<p>It may not be immediately obvious why adding a bright background to a Nobel-prize-winning background-free measurement merits another Nobel prize. Certainly, adding background light to an optical measurement adds additional noise
+
+[<a class="citation" href="https://doi.org/10.1007/978-0-387-45524-2" title="Handbook of Biological Confocal Microscopy, third edition; J. Pawley; Springer US, ISBN 978-0-387-25921-5, eBook ISBN 978-0-387-45524-2, Chapter 2 (2006)">Pawley 2006</a>].
+
+The critical detail is that Zernike added a bright <em>coherent</em> background, which adds both additional noise and additional signal. How much signal, and how much noise?</p>
+
+<p>The total intensity \(I\) at a pixel of the detector in Figure 3 is proportional to \(|\vec{E}_{s}|^{2} + |\vec{E}_{b}|^2 + 2 \vec{E}_{s}\cdot\vec{E}_{b}\cos{\theta}\), where \(\vec{E}_{s}\) is the electric field at that pixel due to light scattered by the point-like particle, \(\vec{E}_{b}\) is the electric field at that pixel due to the coherent background, and \(\theta\) is the relative phase between the two fields at that pixel
+
+[<a class="citation" href="https://books.google.com/books?id=SL1n9TuJ5YMC" title="Introduction to modern optics, second edition; Grant R. Fowles; Courier Corporation, ISBN 0486659577, 9780486659572, Chapter 3 (1989)">Fowles 1989</a>].
+
+The number of photoelectrons detected at that pixel during a measurement with duration \(\tau\) is drawn from a Poisson distribution with mean \(\epsilon \tau I\) and standard deviation \(\sqrt{\epsilon \tau I}\), where \(\epsilon\) is a proportionality constant depending on properties of the detector
+
+[<a class="citation" href="https://doi.org/10.1364/AO.4.000079" title="Noise in Photoemission Current; D. L. Fried; Applied Optics Vol. 4, Issue 1, pp. 79-80 (1965) ">Fried 1965</a>].</p>
+
+<p>In the case of dark-field microscopy, \(\vec{E}_{b} = 0\). If there is no "stray" light or other noise sources, the presence of the point-like particle changes the mean number of photoelectrons detected by our pixel, from zero to \(\epsilon \tau |\vec{E}_{s}|^{2}\). The standard deviation in the number of photoelectrons is the square root of this mean. If we call the change in mean photoelectron number due to the point-like particle the "signal", and the standard deviation the "noise", the per-pixel signal-to-noise ratio of dark-field microscopy is \(\frac{\epsilon \tau |\vec{E}_{s}|^{2}}{\sqrt{\epsilon \tau |\vec{E}_{s}|^{2}}} = \sqrt{\epsilon \tau} |\vec{E}_{s}|\).</p>
+
+<p>In the case of phase contrast microscopy, the presence of the point-like particle changes the mean number of photoelectrons from \(\epsilon \tau |\vec{E}_{b}|^{2}\) to \(\epsilon \tau \left(|\vec{E}_{s}|^{2} + |\vec{E}_{b}|^2 + 2 \vec{E}_{s}\cdot\vec{E}_{b}\cos{\theta}\right)\). If the background \(\epsilon \tau |\vec{E}_{b}|^{2}\) is extremely stable and well calibrated (<a href="./index.html#physics_question" target="_self">as discussed above</a>), and we call the change in mean photoelectron number due to the point-like particle the "signal", and the standard deviation the "noise", the per-pixel signal-to-noise ratio of phase-contrast microscopy is \(\frac{\epsilon \tau \left(|\vec{E}_{s}|^{2} + |\vec{E}_{b}|^2 + 2 \vec{E}_{s}\cdot\vec{E}_{b}\cos{\theta}\right) - \epsilon \tau |\vec{E}_{b}|^{2}}{\sqrt{\epsilon \tau \left(|\vec{E}_{s}|^{2} + |\vec{E}_{b}|^2 + 2 \vec{E}_{s}\cdot\vec{E}_{b}\cos{\theta}\right)}} = \sqrt{\epsilon \tau }\frac{|\vec{E}_{s}|^{2} + 2 \vec{E}_{s}\cdot\vec{E}_{b}\cos{\theta}}{\sqrt{|\vec{E}_{s}|^{2} + |\vec{E}_{b}|^2 + 2 \vec{E}_{s}\cdot\vec{E}_{b}\cos{\theta}}}\).</p>
+
+<p>In the limits \(|\vec{E}_{s}| \ll |\vec{E}_{b}|\) (large background), \(\vec{E}_{s} \cdot \vec{E}_{b} = |\vec{E}_{s}||\vec{E}_{b}|\) (parallel fields) and \(|\cos{\theta}| \gg \frac{|\vec{E}_{s}|}{|\vec{E}_{b}|}\) (retardance tuned for high-contrast interference), we can make the approximations \(|\vec{E}_{s}|^{2} \ll 2 \vec{E}_{s}\cdot\vec{E}_{b}\cos{\theta} \ll |\vec{E}_{b}|^{2}\) , and the signal-to-noise ratio of phase-constrast microscopy simplifies considerably to \(\sqrt{\epsilon \tau }\frac{2 |\vec{E}_{s}||\vec{E}_{b}|\cos{\theta}}{\sqrt{|\vec{E}_{b}|^2}} = 2\sqrt{\epsilon \tau } |\vec{E}_{s}|\cos{\theta}\). In this limit, we see that adding a coherent background with the correct phase can double the signal-to-noise ratio of dark-field microscopy!</p>
+
+<p>I suspect that the 1953 Nobel was given for a more practical reason: in addition to doubling the signal-to-noise ratio, phase contrast microscopy (with well-tuned retardance) greatly amplifies both the photon-counting noise <em>and the signal</em>. Other sources of noise (e.g. stray light) are "washed out" by the coherently amplified signal. Zernike discusses this point in his Nobel lecture:</p>
+
+<blockquote>In my own experiments I could go down to 4-percent transmission, that is, a 5-times enhanced contrast, the limit being set by the unavoidable stray light. It is only under especially favorable circumstances that a higher increase has been attained by the French astronomer Lyot. In his study of the minute ripples of polished lens surfaces he had independently rediscovered phase contrast and could use strips that diminished the amplitude to one-thirtieth, so that ripples only one one-thousandth of a wavelength high showed in good contrast. [<a class="citation" href="https://doi.org/10.1126/science.121.3141.345" title="How I discovered phase contrast; F. Zernike; Science 121.3141 (1955): 345-349.">Zernike 1955</a>]</blockquote><p></p>
+
+<p>This raises a natural question: in the case of <em>no</em> stray light, for a given signal field \(\vec{E}_{s}\), what choice of background field amplitude \(|\vec{E}_{b}|\) and relative phase \(\theta\) will give optimal signal-to-noise ratio? Naively inspecting our previous equations leads us to a curious result. If we happen to choose a background field that perfectly cancels our signal field, that is, \(|\vec{E}_{s}|^{2} + |\vec{E}_{b}|^2 + 2 \vec{E}_{s}\cdot\vec{E}_{b}\cos{\theta} = 0\), then our noise goes to zero, but our signal does not!</p>
+
+<p>This is the origin of the question in our title, and the math, coding, and physics questions that follow. While I have no expectation that "infinite" signal-to-noise ratio allows perfect inference of our sample's optical properties, it's still highly suggestive, and interesting to explore what inference it <em>does</em> allow. For mathematical simplicity, I reduced the multi-pixel phase-contrast microscope shown in Figure 3 to the single-pixel interferometer shown in Figure 1, but clearly insight in one case leads directly to insight in the other. If the "infinite" signal-to-noise ratio case actually yields superior inference, one could imagine imaging methods that tune a multi-pixel spatial light modulator in one arm of an interferometer to cancel the fields transmitted by an unknown object in the other arm.</p>
+
+<p>I also think the underlying inference question is a timeless combination of importance and simplicity, which is why I've reduced it to a math puzzle, a coding challenge, and a physics question, rather than simply answering it. I think this document does more good as a challenge than as a reference.</p>
+
+<p>Who wants to play <a href="./index.html#math_puzzle" target="_self">my game</a>?</p>
+
+<noscript>
+<h3>Your browser doesn't seem to support Javascript. This document uses Javascript to generate a reference list, which would normally be displayed here. Either activate Javascript, or use the "Download PDF" link above if you want to see the reference list.</h3></noscript>
+
+</section>
+<footer>
+  <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="./images/cc_by_4p0.png"></a>
+
+  <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a></small></p>
+</footer>
+</div>
+ <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+</body>
+</html>
