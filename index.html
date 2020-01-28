@@ -11,12 +11,12 @@ Based on this theme: https://github.com/broccolini/dinky , which mentioned that 
     <base target="_blank">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="citation_title" content="What is the signal-to-noise ratio of phase-contrast imaging? Can it be infinite?">
-    <meta name="citation_author" content="Andrew G. York">
-    <meta name="citation_publication_date" content="2018/10/15">
+    <meta name="citation_title" content="Measuring by Darkness? Let there be light!">
+    <meta name="citation_author" content="Rainer Heintzmann, Jan Becker">
+    <meta name="citation_publication_date" content="2019/01/28">
     <meta name="citation_journal_title" content="Github.io">
-    <meta name="citation_pdf_url" content="https://andrewgyork.github.io/adaptive_interference_inference/adaptive_interference_inference%20by%20AndrewGYork.pdf">
-    <title>adaptive_interference_inference by AndrewGYork</title>
+    <meta name="citation_pdf_url" content="https://github.com/beckerjn92/Measuring-by-Darkness-Let-there-be-light/edit/master/index.html%20by%20AndrewGYork.pdf">
+    <title>Measuring by Darkness? Let there be light! by Rainer Heintzmann and Jan Becker</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/prism.css">
@@ -37,11 +37,11 @@ Based on this theme: https://github.com/broccolini/dinky , which mentioned that 
   <body>
     <div class="wrapper">
       <header>
-        <h1 class="header">Adaptive interference inference</h1>
+        <h1 class="header">Measuring by Darkness? Let there be light!</h1>
         <ul>
-          <li class="download"><a class="buttons" href="https://github.com/AndrewGYork/adaptive_interference_inference/zipball/master">Download ZIP</a></li>
-          <li><a class="buttons github" href="https://github.com/AndrewGYork/adaptive_interference_inference">View On GitHub</a></li>
-          <li><a class="buttons pdf" href="./adaptive_interference_inference%20by%20AndrewGYork.pdf">Download PDF</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/beckerjn92/Measuring-by-Darkness-Let-there-be-light">Download ZIP</a></li>
+          <li><a class="buttons github" href="https://github.com/beckerjn92/Measuring-by-Darkness-Let-there-be-light">View On GitHub</a></li>
+          <li><a class="buttons pdf" href="https://github.com/beckerjn92/Measuring-by-Darkness-Let-there-be-light">Download PDF</a></li>
         </ul>
         <p class="header">This project is maintained by <a class="header name" href="https://github.com/AndrewGYork">AndrewGYork</a> in the <a class="header name" href="https://andrewgyork.github.io/">York lab</a>, and was funded by <a class="header name" href="https://www.calicolabs.com/">Calico Life Sciences LLC</a> </p>
       </header>
@@ -52,28 +52,26 @@ The real text begins here.
  -->
 <section>
 <h1>Micro-publication</h1>
-<h2>What is the signal-to-noise ratio of phase-contrast imaging? Can it be infinite?</h2>
-<p class="author_list">Andrew G. York<sup>1*</sup>, Sanjay R. Varma<sup>1</sup></p>
-<p class="author_affiliations"><sup>1</sup>Calico Life Sciences LLC, South San Francisco, CA 94080, USA</p>
-<p class="contact_email"><sup>*</sup>Permanent email: <a href="mailto:andrew.g.york+inference@gmail.com" target="_self">andrew.g.york+inference@gmail.com</a></p>
-<p class="contact_email"><sup>*</sup>Institutional email: <a href="mailto:agy+inference@calicolabs.com" target="_self">agy+inference@calicolabs.com</a></p>
+<h2>Measuring by Darkness? Let there be light!</h2>
+<p class="author_list">Rainer Heintzmann<sup>1,2,3*</sup>, Jan Becker<sup>1</sup></p>
+<p class="author_affiliations"><sup>1</sup>Leibniz Institute of Photonic Technology, Albert-Einstein-Str. 9, 07745 Jena, Germany</p>
+<p class="author_affiliations"><sup>2</sup>Institute of Physical Chemistry, Friedrich-Schiller-University Jena, Helmholtzweg 4, 07743 Jena, Germany</p>
+<p class="author_affiliations"><sup>3</sup>Abbe Center of Photonics, Friedrich-Schiller-University Jena, Albert-Einstein Str. 6, 07745 Jena, Germany</p>  
+<p class="contact_email"><sup>*</sup>Permanent email: <a href="mailto:heintzmann@gmail.com" target="_self">heintzmann@gmail.com</a></p>
+<p class="contact_email"><sup>*</sup>Institutional email: <a href="mailto:agy+inference@calicolabs.com" target="_self">rainer.heintzmann@leibniz-ipht.de</a></p>
 <h3>Abstract</h3>
-<p class="abstract">I'd like to invite you to consider one of my favorite physics questions, about how much information we can squeeze out of optical measurements. Even if you don't know any physics, the question translates cleanly to a pure mathematical puzzle, or alternatively, a coding challenge that might be well suited to machine-learning approaches. This is an old question, but an important one: optical measurements are an essential tool in every field of science and industry, and any improvement to our ability to extract information from light would have wide-ranging impact.
-</p>
-<h3>Intended audience</h3>
-<p class="abstract">Anyone who likes math puzzles, coding challenges, and/or physics questions. Click the appropriate link below to jump to the relevant section:
-</p>
-<table>
-  <tr>
-    <td><a href="./index.html#math_puzzle" target="_self">Click here if you like math</a></td>
-    <td><a href="./index.html#coding_challenge" target="_self">Click here if you like coding</a></td>
-    <td><a href="./index.html#physics_question" target="_self">Click here if you like physics</a></td>
-  </tr>
-</table>
+<p class="abstract">Building on work of York et al.,1 we analyze a particular aspect of the following optics problem: Is the
+signal to noise ratio (SNR) of interferometric nulling with a given photon budget infinite? We compare the previously
+stated expression for the SNR with a different way of estimating an unknown amplitude: interfering with a very strong
+reference wave of known strength, i.e. optical amplification. Our analysis reveals that optical amplification is in
+all aspects superior to interferometric nulling. It not only yields more precise estimates, even when a scheme based
+on rejecting an estimate is used, but in addition optical amplification does not require a rejection of a hypothesized
+position estimate. We confirm our theoretical prediction with some numerical investigation; visually observing the
+differences between both methods, as well as stating some statistical analysis.</p>
 
 <h3>Peer review status</h3>
-<p>Pre-print published October 15, 2018 (This article is not yet peer-reviewed)</p>
-<p>Cite as: <a href="https://doi.org/10.5281/zenodo.1463273">doi:10.5281/zenodo.1463273</a></p>
+<p>Pre-print published Januray 28, 2020 (This article is not yet peer-reviewed)</p>
+<p>Cite as: <a href="http://doi.org/10.5281/zenodo.3629784">doi:10.5281/zenodo.3629784</a></p>
 
 <h3 class="onlyprint">
 Note that this is a limited PDF or print version; animated and interactive figures are disabled. For the full version of this article, please visit <a href="https://andrewgyork.github.io/adaptive_interference_inference">https://andrewgyork.github.io/adaptive_interference_inference</a></h3>
@@ -81,10 +79,10 @@ Note that this is a limited PDF or print version; animated and interactive figur
 <noscript>
 <h3>Your browser doesn't seem to support Javascript. This document uses Javascript for interactive figures, math typesetting, and to automatically generate the reference list. Either activate Javascript, or use the "Download PDF" link above if you want properly typeset math and a reference list.</h3></noscript>
 
-<h3 id="math_puzzle">
-A math puzzle</h3>
-<p>Let's play a game. I know a complex number \(x\). Your job is to infer \(x\). You know that \(|x| \leq 1\). <a href="./index.html#note_1" target="_self" title="For Bayesians: I'll choose the magnitude |x| from a uniform distribution between 0 and 1, and I'll choose the phase &ang;x from a uniform distribution between 0 and 2&pi;. Bonus points if your algorithm works robustly (or can be easily adapted) if 'x' is drawn from a different distribution.
-">*</a></p>
+<h3 id="introduction">
+Introduction</h3>
+<p>n the micro–publication,1 York et al. describe an interesting scientific problem relating to measuring an amplitude-phase object using a Mach-Zehnder interferometer (Fig. 1). Their thought–
+experiment is based on the only source of noise being the stochastic nature of the photons:">*</a></p>
 
 <p>You may choose any two complex numbers, \(a\) and \(b\). I will calculate \(y = |ax + b|^2\). Then I'll draw randomly from a Poisson distribution with expectation value \(y\), and tell you the (stochastic) result \(r\).</p>
 
