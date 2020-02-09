@@ -254,7 +254,7 @@ pre {
 /* Tables */
 
 table {
-  width: 100%;
+  width: 70%;
   border: 1px solid #ccc;
   margin-bottom: 32px;
   text-align: left;
@@ -322,6 +322,10 @@ h1.header {
 
 
 h1.header, a.header, a.name, header a{
+  color: #fff;
+}
+
+h2.header, a.header, a.name, header a{
   color: #fff;
 }
 
