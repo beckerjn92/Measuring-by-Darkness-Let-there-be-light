@@ -6,6 +6,11 @@ Skip to the part that says 'The real text begins here'
 ##############################################################
 Based on this theme: https://github.com/broccolini/dinky , which mentioned that attribution is appreciated. Thanks, broccolini!
 -->
+
+<!--<script async src="javascript/Minimal-MathJax/MathJax.js config=Tex-AMS-CHTML"></script>-->
+<!--<script type="text/x-mathjax-config"> MathJax.Hub.Config({Tex:{equationNumbers:{autoNumber:"AMS"}},});</script>-->
+<!--<script type="text/x-mathjax-config"> MathJax.Hub.Config({tex: {tags: 'ams'}});</script>-->
+
 <html lang="en">
   <head>
     <base target="_blank">
@@ -15,7 +20,7 @@ Based on this theme: https://github.com/broccolini/dinky , which mentioned that 
     <meta name="citation_author" content="Rainer Heintzmann, Jan Becker">
     <meta name="citation_publication_date" content="2019/01/28">
     <meta name="citation_journal_title" content="Github.io">
-    <meta name="citation_pdf_url" content="https://github.com/beckerjn92/Measuring-by-Darkness-Let-there-be-light/edit/master/index.html%20by%20AndrewGYork.pdf">
+    <meta name="citation_pdf_url" content="https://github.com/beckerjn92/Measuring-by-Darkness-Let-there-be-light/blob/master/Measuring_by_Darkness_Let_there_be_light.pdf">
     <title>Measuring by Darkness? Let there be light! by Rainer Heintzmann and Jan Becker</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
@@ -31,19 +36,32 @@ Based on this theme: https://github.com/broccolini/dinky , which mentioned that 
     <script async  src="javascript/Minimal-MathJax/MathJax.js?config=TeX-AMS_CHTML"></script>
     <script src="javascript/update_figures.js"></script>
     <script src="javascript/reference_list/reference_list.js"></script>
-    <script src="javascript/google-analytics/analytics.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	
+	<script type="text/x-mathjax-config">
+	MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "all" } }
+	});
+	</script>
+	
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+	</script>
+	
+	
   </head>
   <body>
     <div class="wrapper">
       <header>
-        <h1 class="header">Measuring by Darkness? Let there be light!</h1>
+        <h2 class="header">Measuring by Darkness? Let there be light!</h2>
         <ul>
-          <li class="download"><a class="buttons" href="https://github.com/beckerjn92/Measuring-by-Darkness-Let-there-be-light">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/beckerjn92/Measuring-by-Darkness-Let-there-be-light/zipball/master">Download ZIP</a></li>
           <li><a class="buttons github" href="https://github.com/beckerjn92/Measuring-by-Darkness-Let-there-be-light">View On GitHub</a></li>
-          <li><a class="buttons pdf" href="https://github.com/beckerjn92/Measuring-by-Darkness-Let-there-be-light">Download PDF</a></li>
+          <li><a class="buttons pdf" href="https://github.com/beckerjn92/Measuring-by-Darkness-Let-there-be-light/blob/master/Measuring_by_Darkness_Let_there_be_light.pdf">Download PDF</a></li>
         </ul>
-        <p class="header">This project is maintained by <a class="header name" href="https://github.com/AndrewGYork">AndrewGYork</a> in the <a class="header name" href="https://andrewgyork.github.io/">York lab</a>, and was funded by <a class="header name" href="https://www.calicolabs.com/">Calico Life Sciences LLC</a> </p>
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/AndrewGYork">Andrew G. York</a> and <a class="header name" href="https://github.com/beckerjn92">Jan Becker</a>.</p>
       </header>
 <!-- 
 ##############################################################
@@ -53,272 +71,319 @@ The real text begins here.
 <section>
 <h1>Micro-publication</h1>
 <h2>Measuring by Darkness? Let there be light!</h2>
-<p class="author_list">Rainer Heintzmann<sup>1,2,3*</sup>, Jan Becker<sup>1</sup></p>
+<p class="author_list">Rainer Heintzmann<sup>1,2*</sup> and Jan Becker<sup>1</sup></p>
 <p class="author_affiliations"><sup>1</sup>Leibniz Institute of Photonic Technology, Albert-Einstein-Str. 9, 07745 Jena, Germany</p>
-<p class="author_affiliations"><sup>2</sup>Institute of Physical Chemistry, Friedrich-Schiller-University Jena, Helmholtzweg 4, 07743 Jena, Germany</p>
-<p class="author_affiliations"><sup>3</sup>Abbe Center of Photonics, Friedrich-Schiller-University Jena, Albert-Einstein Str. 6, 07745 Jena, Germany</p>  
+<p class="author_affiliations"><sup>2</sup>Institute of Physical Chemistry and Abbe Center of Photonics, Friedrich-Schiller-University Jena, Helmholtzweg 4, 07743 Jena, Germany</p>
 <p class="contact_email"><sup>*</sup>Permanent email: <a href="mailto:heintzmann@gmail.com" target="_self">heintzmann@gmail.com</a></p>
-<p class="contact_email"><sup>*</sup>Institutional email: <a href="mailto:agy+inference@calicolabs.com" target="_self">rainer.heintzmann@leibniz-ipht.de</a></p>
+
 <h3>Abstract</h3>
-<p class="abstract">Building on work of York et al.,1 we analyze a particular aspect of the following optics problem: Is the
+<p class="abstract">Building on work of York et al. [<a class="citation" href="https://zenodo.org/record/146327" title="What is the signal-to-noise ratio of phase-contrast imaging? Can it be infinite?; Andrew G. York, Sanjay R. Varma; Pre-print.">York</a>], we analyze a particular aspect of the following optics problem: Is the
 signal to noise ratio (SNR) of interferometric nulling with a given photon budget infinite? We compare the previously
 stated expression for the SNR with a different way of estimating an unknown amplitude: interfering with a very strong
 reference wave of known strength, i.e. optical amplification. Our analysis reveals that optical amplification is in
 all aspects superior to interferometric nulling. It not only yields more precise estimates, even when a scheme based
 on rejecting an estimate is used, but in addition optical amplification does not require a rejection of a hypothesized
 position estimate. We confirm our theoretical prediction with some numerical investigation; visually observing the
-differences between both methods, as well as stating some statistical analysis.</p>
+differences, as well as stating some statistical analysis.
+</p>
+
+<h4>Keywords:</h4>
+<p id="keywords"> optical amplification, interference, signal-to-noise ratio (SNR), nulling.</p>
 
 <h3>Peer review status</h3>
 <p>Pre-print published Januray 28, 2020 (This article is not yet peer-reviewed)</p>
 <p>Cite as: <a href="http://doi.org/10.5281/zenodo.3629784">doi:10.5281/zenodo.3629784</a></p>
 
-<h3 class="onlyprint">
-Note that this is a limited PDF or print version; animated and interactive figures are disabled. For the full version of this article, please visit <a href="https://andrewgyork.github.io/adaptive_interference_inference">https://andrewgyork.github.io/adaptive_interference_inference</a></h3>
-
 <noscript>
 <h3>Your browser doesn't seem to support Javascript. This document uses Javascript for interactive figures, math typesetting, and to automatically generate the reference list. Either activate Javascript, or use the "Download PDF" link above if you want properly typeset math and a reference list.</h3></noscript>
 
-<h3 id="introduction">
-Introduction</h3>
-<p>n the micro–publication,1 York et al. describe an interesting scientific problem relating to measuring an amplitude-phase object using a Mach-Zehnder interferometer (Fig. 1). Their thought–
-experiment is based on the only source of noise being the stochastic nature of the photons:">*</a></p>
+<h3>Introduction</h3>
+<p>In the micro–publication [<a class="citation" href="https://zenodo.org/record/1463274" title="What is the signal-to-noise ratio of phase-contrast imaging? Can it be infinite?; Andrew G. York, Sanjay R. Varma; Pre-print">York</a>] describe an interesting scientific problem relating to measuring an amplitude-phase object using a Mach-Zehnder interferometer (Fig. 1). Their thought-experiment is based on the only source of noise being the stochastic nature of the photons:</p>
+\begin{eqnarray}
+Y_i & = & \mathcal{P} \{ y_i \}  \\
+y_i & = & |a_i x + b_i|^2
+\label{eqn:Intensity}
+\end{eqnarray}
 
-<p>You may choose any two complex numbers, \(a\) and \(b\). I will calculate \(y = |ax + b|^2\). Then I'll draw randomly from a Poisson distribution with expectation value \(y\), and tell you the (stochastic) result \(r\).</p>
-
-<p>We repeat this process as many times as you'd like: on round \(i\), you choose \(a_i\) and \(b_i\), I'll calculate \(y_i\) and I'll tell you \(r_i\). Your "cost" for round \(i\) is the quantity \(|a_i|^2\), and you have a "budget" of \(A\). If you go over budget (meaning, if you choose a value \(a_N\) such that \(A \lt \sum_i^N |a_i|^2\)), I won't answer, and the game is over.</p>
-
-<p>What algorithm should you follow to infer \(x\) as accurately<a href="./index.html#note_2" target="_self" title="Note I didn't define &ldquo;accuracy&rdquo;! I'll leave this intentionally flexible. I suspect the &ldquo;ideal&rdquo; algorithm will depend on the choice of definition, but I'm indifferent as long as your definition of accuracy seems sane to me.">**</a> as possible, for a given value of \(A\)? Ideally, express this algorithm as a short Python/Numpy script, ideally in a GitHub repository that I can link to here. Feel free to invite anyone who's interested to play.</p>
-
-<p>Let the best algorithm win!</p>
-
-<ul>
-  <li>Can you do any better than the algorithm \(a_0 = \sqrt{A}\), \(b_0 = 0\) ?</li>
-  <li>Can you do any better than an algorithm where \(a\) and \(b\) are chosen in advance, independently of \(r_k\)? For example: \(a_k = \sqrt{A/N}\) and \(b_k = \sqrt{A/N}e^{2\pi i k / N}\)</li>
-</ul>
-
-<h4>Notes:</h4>
-<p id="note_1">
-<a href="./index.html#note_1" target="_self">*</a> For Bayesians: I'll choose the magnitude \(|x|\) from a uniform distribution between \(0\) and \(1\), and I'll choose the phase \(\angle x\) from a uniform distribution between \(0\) and \(2\pi\). Bonus points if your algorithm works robustly (or can be easily adapted) if \(x\) is drawn from a different distribution.
-</p>
-
-<p id="note_2">
-<a href="./index.html#note_2" target="_self">**</a> Note I didn't define "accuracy"! I'll leave this intentionally flexible. I suspect the "ideal" algorithm will depend on the choice of definition, but I'm indifferent as long as your definition of accuracy seems sane to me.</p>
-
-<h3 id="coding_challenge">
-A coding challenge</h3>
-<p>I've implemented an 'oracle' that will play <a href="./index.html#math_puzzle" target="_self">a game</a> with you. You can find a copy of the Python 3 code in our <code>adaptive_interference_inference</code> GitHub repository: <a href="https://github.com/AndrewGYork/adaptive_interference_inference/blob/master/code/game.py">./code/game.py</a></p>
-<pre><code class="language-python">import numpy as np
-
-class Oracle:
-    def __init__(self, budget):
-        assert budget > 0
-        self.budget = budget
-        self.total_cost = 0
-        self.round = 0
-        self.a_history = []
-        self.b_history = []
-        self.r_history = []
-        self.game_over = False
-        
-        # Generate some secret numbers.
-        # Don't peek!
-        self._magnitude = np.random.random(1)
-        self._phase = 2*np.pi*np.random.random(1)
-        self._x = self._magnitude * np.exp(1j*self._phase)
-        return None
-
-    def ask(self, a, b):
-        if self.game_over:
-            return None
-        self.total_cost += np.abs(a)**2
-        if self.total_cost > self.budget:
-            self.game_over = True
-            return None
-        y = np.abs(a*self._x + b)**2
-        r = np.random.poisson(y)
-        self.round += 1
-        self.a_history.append(a)
-        self.b_history.append(b)
-        self.r_history.append(r)
-        return r
-</code></pre>
-<p></p>
-<p>To play this game, import <code>game.py</code>, choose a value for <code>budget</code>, and create an instance of the <code>Oracle</code> object. Try to infer the value of <code>Oracle._magnitude</code> and/or <code>Oracle._phase</code> as accurately as you can, using only the return values of calls to the <code>Oracle.ask(a, b)</code> method. You are allowed to inspect the code of <code>game.py</code>, but after you instantiate an <code>Oracle</code> object, you are <em>not</em> allowed to inspect its <code>Oracle._x</code>, <code>Oracle._magnitude</code>, or <code>Oracle._phase</code> attributes; that's cheating!<a href="./index.html#note_3" target="_self" title="For machine-learners: feel free to inspect `Oracle._x', `Oracle._magnitude', and/or `Oracle._phase' while you're training and validating a model, just be careful that your *model* doesn't consult these values.">***</a></p>
-<p>Here's an example of how you might use this oracle to play the game:</p>
-<pre><code class="language-python">import numpy as np
-import game
-
-print("An example game")
-oracle = game.Oracle(budget=1000)
-print("Budget:", oracle.budget, '\n')
-num_phases = 5
-for phase_angle in np.arange(0, 2*np.pi, 2*np.pi/num_phases):
-    print('Round', oracle.round)
-    a = np.sqrt(oracle.budget / num_phases) * (1 - 1e-12)
-    b = a * np.exp(1j*phase_angle)
-    print(' a: %07s    (intensity)\n'%('%0.2f'%(np.abs(a)**2)),
-           '   %07s*pi (phase)'%('%0.2f'%(np.angle(a)/np.pi)))
-    print(' b: %07s    (intensity)\n'%('%0.2f'%(np.abs(b)**2)),
-           '   %07s*pi (phase)'%('%0.2f'%(np.angle(b)/np.pi)))
-    response = oracle.ask(a, b)
-    print('oracle.ask(a, b):', response)
-    print('Total cost: %0.2f / %0.2f\n'%(oracle.total_cost,
-                                              oracle.budget))
-print("Game over.")
-print("From these responses, how well can you infer 'x'?")
-print("\nIf you'd made smarter choices of 'a' and 'b' on each round,\n",
-      "could you do a better job inferring 'x'?", sep='')</code></pre>
-
-<p>Note that this is just an example of how to ask the oracle questions. I didn't specify a  method to infer <code>Oracle._x</code> based on the oracle's responses to <code>Oracle.ask(a, b)</code>. That's the game!</p>
-
-<p>What's the best algorithm you can implement to infer the value of <code>Oracle._x</code> as accurately<a href="./index.html#note_2" target="_self" title="Note I didn't define &ldquo;accuracy&rdquo;! I'll leave this intentionally flexible. I suspect the &ldquo;ideal&rdquo; algorithm will depend on the choice of definition, but I'm indifferent as long as your definition of accuracy seems sane to me.">**</a> as possible, for a given value of <code>Oracle.budget</code>? Ideally, express this algorithm as a short Python/Numpy script, ideally in a GitHub repository that I can link to here. Feel free to invite anyone who's interested to play.</p>
-
-<h4>Notes:</h4>
-<p id="note_3">
-<a href="./index.html#note_3" target="_self" >***</a> For machine-learners: feel free to inspect <code>Oracle._x</code>, <code>Oracle._magnitude</code>, and/or <code>Oracle._phase</code> while you're training and validating a model, just be careful that your <em>model</em> doesn't consult these values.
-</p>
-
-<h3 id="physics_question">
-A physics question</h3>
-<p>Suppose we want to measure the complex optical transmission coefficient \(x\) of a thin uniform flat-faced slab of partially transparent unknown material<a href="./index.html#note_4" target="_self" title="This is an extremely common, extremely general problem. For example, this is the one-voxel limit of nearly the entire field of transmitted light microscopy."><sup>&dagger;</sup></a>. When we transmit a collimated beam of monochromatic light through the slab, the slab reduces the beam's amplitude by \(|x|\), and shifts the beam's phase by \(\angle x\). How accurately can we measure this change in intensity and phase?</p>
-
-<p>Consider the ideal interferometric measurement shown in Figure 1 below:</p>
+<p>with $Y_i$ being the measured number of photons in experiment number $i$, $\mathcal{P}$ describes the processes of drawing from a Poisson distribution with expected number of photons $y_i$, $x$ being the amplitude-phase object to measure $(|x|\leq 1$), $b_i$ being the reference amplitude in the interferometer and $a_i$ being the illumination amplitude before the object in this experiment.</p>
 
 <figure id="Figure_1">
-<img src="./images/interferometer/interferometer.png"
- alt="Figure 1" id="Figure_1_image">
-<table class="figure_controls">
-  <tr>
-  <td style="text-align: center"><br>Measurement type:<br><br><br> <em>(Click the radio buttons to change the figure)</em> </td><td><form id="Figure_1_measurement" onchange="update_figure_1()">
-    <input type="radio" name="measurement" id="interferometer.png" checked="checked">Interferometric measurement<br>
-    <input type="radio" name="measurement" id="interferometer_x_is_one.png">Object-free interferometric measurement \((x = 1)\)<br>
-    <input type="radio" name="measurement" id="interferometer_a_is_zero.png">Background intensity measurement \((a = 0)\)<br>
-    <input type="radio" name="measurement" id="interferometer_b_is_zero.png">Transmitted intensity measurement \((b = 0)\)<br>
-  </form></td></tr>
-</table>
-<figcaption><strong>Figure 1: An unknown material sits in one arm of an ideal optical interferometer</strong>. The interfering beams are collimated, monochromatic, perfectly coherent, and overlap perfectly at the outputs. The average number of photoelectrons \(y\) measured per trial at Detector 1 is \(|ax + b|^2\), where \(a\), \(b\), and \(x\) are complex numbers. Modulators \(a\) and \(b\) let us tune the amplitude and phase of \(a\) and \(b\) respectively. The absorption and phase shift due to the material determine the amplitude and phase of \(x\). </figcaption>
+<img src="./images/Setup.png"
+ alt="Figure 1" id="Figure_1_image" >
+<figcaption><strong>Figure 1:</strong> Mach-Zehnder type interferometer as described by [<a class="citation" href="https://zenodo.org/record/1463274" title="What is the signal-to-noise ratio of phase-contrast imaging? Can it be infinite?; Andrew G. York, Sanjay R. Varma; Pre-print on Zenodo.">York</a>]. One arm of the interferometer contains the unknown object \(x\)+  spatial light modulator (SLM) $a$. The reference arm only a single SLM $b$. Both SLM's are able to perform a complex modulation of the light distribution, hence change amplitude and phase. In the constructive channel we obtain the signal $y = |ax + b|^2$. </figcaption>
 </figure><p></p>
 
-<p>We make a measurement by choosing the amplitude and phase for each modulator and counting photoelectron "clicks" at Detector 1 for some time interval. Suppose that our source and our interferometer are perfectly stable, and our detector never gives false detections<a href="./index.html#note_5" target="_self" title="This is consistent with the laws of physics, but an awful lot of work to achieve in practice."><sup>&dagger;&dagger;</sup></a>. Even in this ideal case, the number of "clicks" we count is inherently stochastic. The number of clicks per trial at Detector 1 is drawn from a Poisson distribution<a href="./index.html#note_6" target="_self" title="For a discussion of this assertion, and many fascinating related issues, read the beautifully written second chapter of *The Quantum Challenge: Modern Research on the Foundations of Quantum Mechanics* by Greenstein and Zajonc."><sup>&dagger;&dagger;&dagger;</sup></a> with expected value \(y=|ax + b|^2\). How shall we infer \(x\)?</p>
+<p>The Poisson process $\mathcal{P} \{ y \}$ has the probability distribution:</p>
+\begin{equation}
+    P(Y|y) = \frac{y^Y}{Y!} \exp (-y) 
+\label{eqn:Poisson}
+\end{equation}
 
-<p>With the probe beam blocked (Fig. 1 with <code>Measurement type: Background intensity measurement</code>), we can calibrate the reference beam signal \(|b|^2\) due to Modulator \(b\). Since the mean \(y\) of a Poisson process grows faster than its standard deviation \(\sqrt{y}\), we can calibrate the output amplitude of Modulator \(b\) with arbitrarily high signal-to-noise ratio \(y / \sqrt{y}\), by chasing the limit \(|b|^2 \rightarrow \infty\). Next, we can remove the object (Fig. 1 with <code>Measurement type: Object-free interferometric measurement</code>) and use a similar procedure to calibrate the output amplitude of Modulator \(a\), and also to calibrate how the modulators tune the relative phase \(\angle\frac{a}{b}\) between the probe and reference beams.</p>
+<p>The guessing "game" as described in [<a class="citation" href="https://zenodo.org/record/1463274" title="What is the signal-to-noise ratio of phase-contrast imaging? Can it be infinite?; Andrew G. York, Sanjay R. Varma; Pre-print">York</a>] is to estimate $x$ by a smart choice of $a_i$ and $b_i$  with the additional limitation of a finite illumination budget $A$, which is given as: $\sum_{i=1}^{N}{|a_i|^2} \leq A$ with $N$ being the number of experiments performed. York et al. continue to analyze this problem and arrive at the following expression for the signal-to-noise ratio (SNR):</p>
+\begin{equation}
+SNR =\frac{|a+b|^2}{|a x+b|} -| a x+b|
+\label{eqn:SNR}
+\end{equation}
 
-<p>With perfect knowledge and control of \(a\) and \(b\), we're ready to measure the complex transmission \(x\) of our object. Let's add one additional constraint: for this measurement, we can't use an infinite amount of light. Perhaps we're time-limited; our source has finite brightness, we have many objects to measure today, and we can't spend as much time on one measurement as we did on calibration. Perhaps we're dose-limited; too much light might melt or burn our unknown object. Either way, if the cumulative "light dose" \(\sum_i^N|a_i|^2\) at trial \(N\) exceeds our "dose budget" \(A\), we must stop measuring, and Poisson noise limits our signal-to-noise ratio. What is our signal, and what is our noise?</p>
+<p>which has the surprising property of becoming infinite if the interferometer is adjusted for perfect configuration: $b=-ax$. This is the point which our micro-publication is addressing: Is the SNR of such an interferometric measurement for estimating $x$ really infinite?</p>
 
-<p>Let's start with a simple measurement of \(|x|\) (how much the object reduces the probe beam's amplitude; Fig. 1 with <code>Measurement type: Transmitted intensity measurement</code>). Each trial, Detector 1 yields a number of "clicks" drawn stochastically from a Poisson distribution with expectation value \(|ax|^2\). Our noise is the standard deviation of this distribution, \(|ax|\). Given our perfect knowledge of \(a\), our mean signal is the <em>change</em> in intensity \(|a|^2 - |ax|^2\), yielding a signal-to-noise ratio (SNR) of \(|\frac{a}{x}| - |ax|\) for a single trial. Note that in the \(|x| \rightarrow 1\) limit of perfect transmission, the SNR tends to zero. Similarly, in the \(x \rightarrow 0\) limit of perfect opacity, the SNR tends to infinity! This actually makes sense: an object with sufficiently high transmission becomes invisible to a transmission measurement, and a perfectly opaque object yields a detectable and fluctuation-free signal. Perhaps most interestingly, if you count even a single "click", you know with complete confidence \(|x| \neq 0\) and the object was not perfectly opaque.</p>
+<h3>Nulling or amplification?</h3>
+The first point to notice in eqn. \eqref{eqn:Intensity} is that the result of each measurement is independent of the choice of a global phase, as the magnitude squared is calculated. Since both, $a_i$ and $b_i$, are permitted freely to choose their phase, a single relative phase suffices and we can set $a_i$ to always be real valued without loss of generality. Next we can separate the problem into a real and an imaginary part, which are added in quadrature. We therefore first analyze the real part of the problem by also assuming $x$ and $b_i$ to be real.
+To gain some insight, we now further assume that all $N$ experiments refer to the same choice of $a_i$. Hence we can replace eqn. \eqref{eqn:Intensity} with a single experiment using all the available photon budget at once:
+\begin{equation}
+y=|\sqrt{A} x + b|^2
+\label{eqn:OneStep}
+\end{equation}
 
-<p>If we want to measure phase \(\angle{x}\) in addition to amplitude \(|x|\), we must use interference (Fig. 1 with <code>Measurement type: Interferometric measurement</code>). Our noise in this case is \(|ax + b|\), and our signal is still the change in intensity due to the object, \(|a + b|^2 - |ax + b|^2\), yielding an SNR of \(\frac{|a + b|^2}{|ax + b|} - |ax + b|\). Like transmission measurements, our SNR can be infinite, but since we control \(a\) and \(b\), we can achieve infinite SNR regardless of the value of \(x\)! All we have to do is choose \(\frac{b}{a} = -x\), and we're guaranteed to get a detectable, fluctuation-free signal with infinite SNR: zero "clicks". This is presumably insane, but it raises some fun questions.</p>
+<p>The infinite SNR in a nulling experiment as stated in eqn. \eqref{eqn:SNR} does not consider that we may have estimated $x$ wrongly and thus chose a wrong value for $a$, but nevertheless obtained zero photons in our measurement due to the <i>limited</i> overall photon budget. </p>
 
-<p>In order to achieve "infinite SNR", we must have chosen \(\frac{b}{a} = -x\). But if we don't know \(x\) yet, how are we supposed to choose \(a\) and \(b\)? Also, observing zero clicks doesn't guarantee \(x = \frac{-b}{a}\); maybe we just didn't wait long enough for a click. Infinite SNR is therefore quite different from infinite precision. However, if we observe even a single click on Detector 1, we know with certainty \(x \neq \frac{-b}{a}\). This suggests that if we view measurement as asking a question to the unknown object, the question "What are you?" may be very different from the question "Are you <em>this</em>?". This second question has only two possible answers: "maybe" (zero clicks after using up your entire dose budget) and "no" (the first click, at which point you should probably halt the measurement and re-tune your modulators). Clearly there are important clues encoded in how quickly the "no" is delivered.</p>
+<p>In our work, we aim to compare the estimation of $x$ by <i>nulling</i> (setting $b=-\sqrt{A} x$) with another scheme where $b\gg1$. This principle, termed <i>optical amplification</i>, is known for example in optical coherence tomography (OCT) as a method to eliminate read noise [<a class="citation" href="https://patents.google.com/patent/US6900943B2/en" title="Optical amplification in coherent optical frequency modulated continuous wave reflectometry; Peter E. Andersen, Anders Bjarklev, Andrea Tycho; Patent">Andersen</a>]. Here we do not analyze it in the context of read noise, rather as a general interferometric technique and compare it with the nulling scheme as suggested by York et al.</p>
 
-<p>So, what algorithm should we use for tuning our modulators and drawing conclusions about \(x\)? My suspicion is the optimal measurement will use an extremely small fixed value for \(a\) (virtually guaranteeing zero or one "clicks" per trial), and choose a new \(|b|\) and \(\angle{b}\) after every time the detector clicks, hunting for the informative special case \(b = -ax\). I also suspect that the new choice of \(b\) should be informed by how long each previous measurement took to produce its first click.</p>
+<h3>Comparison of both approaches</h3>
+<p>For a fair comparison it is essential to construct a thought experiment treating the schemes to compare equally.
+This is not trivial: the nulling scheme (I) is a hypothesis test. It is able to achieve complete experimental agreement, i.e. for a chosen $b$ our measurement does not yield a single detected photon, hence our obtained estimate $\hat{x}$ is consistent with being the correct value $x$. The optical amplification scheme (II), however, typically detects a number of photons from which a value of $x$ is estimated with a predictable precision. These are two fundamentally different ways of how to infer information on $x$.</p>
 
-<p>But I'm not going to solve this myself; I'd rather play the game with you. What algorithm would you use? Ideally, express this algorithm as a short Python/Numpy script, ideally in a GitHub repository that I can link to here. Feel free to invite anyone who's interested to play.</p>
+<h4>A new thought experiment</h4>
+<p>To nevertheless be able to compare both schemes on equal terms we designed the following hypothesis testing scheme: for a given (unknown) $x$ the range $x \in [-1,1]$ is tested in equal steps $S_x$ searching for $x = \hat{x}$. For the nulling scheme, consistency is given by detecting zero photons, whereas for the amplification scheme we have to define a different consistency rule: At each $x$ many such tests are performed and we evaluate and plot the frequency of consistent results.</p>
 
-<p>What does this teach us about measurement?</p>
+<p>In this case, being consistent means that the detected number of photons ($Y$) is within a small distance $\Delta y$ from the predicted number of photons (assuming $\hat{x} = x$), given the chosen value of $b$. To further simplify our analysis, we approximate $\Delta y$ to be small enough that there is no significant change of the probability of detecting photons over this range, i.e. the probability of detecting photons in the range $Y = y\pm\Delta y/2$ is approximately given by $\Delta y P(y|y)$. Since we further assumed $b$ to be large, we can approximate the Poisson distribution (eqn. \eqref{eqn:Poisson}) by a Gaussian probability density, with a variance equal to the expectancy:</p>
+\begin{equation}
+P(Y|y) = \frac{\exp{\left(\frac{-|Y-y|^2}{2y}\right)}}{\sqrt{2\pi y}}
+\label{eqn:Gaussian}
+\end{equation}
 
-<ul>
-  <li>Does "infinite SNR" in a single trial actually indicate a high-precision measurement?</li>
-  <li>Do we actually benefit from "hunting" for perfect destructive interference at Detector 1, or would we be better off searching a diverse set of \(a\), \(b\) combinations?</li>
-  <li>How much better could you do if you also had access to "clicks" from Detector 2?</li>
-</ul>
+<h4>Comparing both inference schemes</h4>
+<p>Now we are able to compare the quality to estimate $\hat{x}$ in our thought experiments. For the nulling scheme, we obtain the probability to measure zero photons according to eqn. \eqref{eqn:Poisson} as:</p> 
+\begin{eqnarray}
+    y & = & |\sqrt{A} x - \sqrt{A} \hat{x}|^2 = A |x-\hat{x}|^2 \nonumber \\
+    P(Y|y) & = & \frac{\left( A |x - \hat{x}|^2\right)^Y}{Y !} \exp(-A |x - \hat{x}|^2) \nonumber \\
+    P(0|y) & = & \exp(-A |x-\hat{x}|^2)
+\end{eqnarray}
 
-<h4>Notes:</h4>
-<p id="note_4">
-<a href="./index.html#note_4" target="_self"><sup>&dagger;</sup></a>This is an extremely common, extremely general problem. For example, this is the one-voxel limit of nearly the entire field of transmitted light microscopy.</p>
+<p>Introducing $b' = -\frac{b}{\sqrt{A}}$, this has to be compared to the result obtained in the amplification scheme. Noting that:</p>
+\begin{equation}
+        y = |\sqrt{A}x - \sqrt{A}b'|^2 = A |x - b'|
+\end{equation}
 
-<p id="note_5">
-<a href="./index.html#note_5" target="_self"><sup>&dagger;&dagger;</sup></a> This is consistent with the laws of physics, but an awful lot of work to achieve in practice.
-</p>
+<p>We can express eqn. \eqref{eqn:Gaussian} as:</p>
+\begin{eqnarray}
+    P(Y|y) & = & \Delta y \frac{\exp(-\frac{|Y-y|^2}{2y})}{\sqrt{2\pi y}} \nonumber \\
+    & = & \Delta y \frac{\exp(-\frac{|A |x-b'|^2-A |\hat{x}-b'|^2|^2}{2A |\hat{x}-b'|^2})}{\sqrt{2\pi A} |\hat{x}-b'|}
+    \label{eq:approximation}
+\end{eqnarray}
+<p>With $Y = A |x-b'|^2$ the <i>actual</i> measured value and $y= A |\hat{x} - b'|^2$ our <i>estimated</i> measurement result. The exponent can be simplified as follows:</p>
+\begin{eqnarray}
+- \frac{A |x^2 - 2b'x - \hat{x}^2 + 2b'\hat{x}|^2}{2(\hat{x}^2 - 2b'\hat{x} + b'^2)} 
+\approx  - \frac{A | - 2b'(x  - \hat{x})|^2}{2b'^2} = - 2 A |x - \hat{x}|^2
+\end{eqnarray}
 
-<p id="note_6">
-<a href="./index.html#note_6" target="_self"><sup>&dagger;&dagger;&dagger;</sup></a> For a discussion of this assertion, and many fascinating related issues, read the beautifully written second chapter of <a href="https://books.google.com/books?id=5t0tm0FB1CsC&lpg=PP1&dq=the%20quantum%20challenge&pg=PA24#v=onepage&q&f=false"><em>The Quantum Challenge: Modern Research on the Foundations of Quantum Mechanics</em></a> by Greenstein and Zajonc.
-</p>
+<p>Using the fact that $x << b'$ and $\hat{x} << b'$.</p>
+<p>With this we can express eqn. \eqref{eq:approximation} as:</p>
+\begin{equation}
+    P(Y | y) \approx \Delta y \frac{\exp \left(-2 A |x - \hat{x}|^2\right)}{\sqrt{2 \pi A} b'}
+\end{equation}
 
-<h3 id="origin_story">What does this have to do with phase contrast microscopy?</h3>
+<p>In both cases we obtain Gaussian probability distributions. However, if we now compare the two results, we notice a difference in their width. For the nulling scheme we obtain:</p>
+\begin{equation}
+    \sigma_\text{nulling} =  \frac{1}{\sqrt{2A}}
+\end{equation}
 
-<p>In 1902, Siedentopf and Zsigmondy described the "ultramicroscope"
+<p>In case of the amplification scheme we get:</p>
+\begin{equation}
+    \sigma_\text{amplification}  =  \frac{1}{2\sqrt{A}} = \frac{\sigma_\text{nulling}}{\sqrt{2}} 
+    \label{eq:relsigma}
+\end{equation}
 
-[<a class="citation" href="https://doi.org/10.1002/andp.19023150102" title="Uber Sichtbarmachung und Größenbestimmung ultramikoskopischer Teilchen, mit besonderer Anwendung auf Goldrubingläser; H. Siedentopf and R. Zsigmondy; Ann. Phys., 315: 1-39 (1902)">Siedentopf 1902</a>],
+<p>Leading to the interesting result that the estimation based on the amplification scheme seems to be more precise than the estimation based on interferometric nulling.</p>
 
-an early form of "dark-field" microscopy. By 1920, dark-field microscopy was a mature, well-established technique
+<h4>Estimating from each individual measurement</h4>
+<p>However, this leaves us with the problem that the overall success rate of our amplification hypothesis test is fairly low, since $\Delta y$ has to be chosen much smaller than the width of the probability distribution to render our approximation in eqn. \eqref{eq:approximation} valid. 
+Yet, if we chose a different estimation scheme, using a large reference $b$, but estimating $\hat{x}$ directly from each measurement as:</p>
+\begin{eqnarray}
+y & = & A|x-b'|^2 \nonumber \\
+\rightarrow \hat{x} & = & b'-\sqrt{y/A}
+\end{eqnarray}
 
-[<a class="citation" href="https://doi.org/10.2307/3221838" title="Modern dark-field microscopy and the history of its development; S.H. Gage; Transactions of the American Microscopical Society Vol. 39, No. 2 pp. 95-141 Apr (1920)">Gage 1920</a>], and Zsigmondy was awarded the 1925 Chemistry Nobel <q>for his demonstration of the heterogenous nature of colloid solutions <a href="https://www.nobelprize.org/prizes/chemistry/1925/summary/">and for the methods he used, which have since become fundamental...</a></q>.
-</p>
+<p>for large positive $b'$. This yields a probability distribution equal to the hypothesis testing scheme (eqn. \eqref{eq:approximation}), with the only difference that in each case a solution is found leading to an estimate and there is no experiment which gets rejected by the hypothesis test. This is in all respects superior compared to the hypothesis testing scheme using interferometric nulling. Not only is an estimation possible every single time, but even for the cases where the experimental outcome is not rejected, its estimate is on average closer to the true value $x$.</p>
+
+<h3>Numerical results</h3>
+<p>To verify our theoretical findings, we did some numerical evaluation of both inferring schemes.</p>
+<h4>General description of our numerical evaluation</h4>
+<p>In total we performed three different experiments: for three different photon budgets (10, 40 and 100) we inferred the unknown $x$ using both strategies.
+For each photon budget, we inferred 10 different values of $x$, which have been chosen randomly within the unit circle, by having amplitude and phase being uniformly distributed. For each $x$ we run the respective inferring scheme 10 times to get some statistical significant. Note that we have implemented the algorithm in an iterative way ($a_i=1$), in contrast to our derivation in section sec. 2. In each iteration the algorithm calculates a probability map, indicating the likelihood of the true $x$ being found at that specific position. For the nulling approach the value of $b$ has been chosen according to $b=-\sqrt{A} \hat{x}$, with $\hat{x}$ being the current (best) estimate. In case of the amplification scheme, $b$ has been chosen according to $|b|>>1$. The phase of $b$ changes in steps of $\pi/2$ for each iteration, so that there is always an alternating between the real and the imaginary axis . For more detail have a look in the code we provide with this publication (see supplement).</p>
+
+<h4>Graphical comparison between both strategies</h4>
+<p>In Figure 2 we show the results of both algorithms for five different iteration steps. the parameters used were: $A = 40$; $a = 1$; $|b| = \sqrt{10}$. A red cross indicates the true position of $x$ and the yellow ring the current estimate $\hat{x}$ . The blue background indicates the probability map, telling us the likelihood of the true $x$ to be found here. A higher probability is indicted by a darker color. Both algorithms start with the same probability distribution (blue); a constant as there is no information yet leaving all possible $x$ with the same change of being the true value. From there on we describe both algorithms separately.</p>
 
 <figure id="Figure_2">
-<img style="width:80%;" src="images/animations/dark_field/animation.gif" alt="Figure 2" id="Figure_2_vid">
-<figcaption><strong>Figure 2: Animation illustrating the key concepts of dark-field microscopy.</strong> A red light pulse illuminates a point-like particle (small circle, left). The particle scatters some of this illumination light (expanding red circle). A lens (black oval, left) focuses the illumination pulse onto a beam block (small rectangle, center), which is opaque and absorbs the illumination.  Any scattered light that passes through the first lens and is not absorbed by the beam block will pass through a second lens (black oval, right) toward a multi-pixel detector (camera icon, far right), forming an image of the scattering particle on a dark background.</figcaption>
-</figure>
-<p></p>
+<img src="./images/AlgorithmVisualisation2.png"
+ alt="Figure 2" id="Figure_2_image" >
+<figcaption><strong>Figure 2:</strong> Graphical comparison of both inferring schemes; <i>nulling</i> (top) and <i>amplification</i> (bottom) for 5 different inferring steps. Each graph shows the true value $x$ (red), the current estimation $\hat{x}$ (yellow) and the corresponding probability map (blue; darker = higher probability). The following parameters were used: $A = 40$; $a = 1$; $|b| = \sqrt{10}$. See also Video 1 & Video 2 for a more traceable visualization. </figcaption>
+</figure><p></p>
 
-<p>Figure 2 above illustrates the essential concept of dark-field microscopy: only the portion of the illumination beam which is scattered by the sample can reach the detector. Scattering objects in the sample appear as if they are emitting light, and this light is imaged onto the detector on a dark background.</p>
+<u>Nulling: </u>
+<p>Already in the beginning of the iterations a photon is measured; hence indicating that the current estimate can not be the correct one. As the intention of the nulling scheme is to achieve perfect interferometric canceling, overall there wont be many photons being measured. Hence an update of the probability map happens rarely (also see video <i>Interference-Inference-nulling.avi </i>} in the supplement). When a photon is measured the probability map changes (Fig. 2, top), as we must include a zero probability at the position of our current estimate $\hat{x}$. The more photons are measured the more irregularly shaped the respective probability distribution gets. The final guess ended up close to the correct value of $x$. We show the residuals throughout the iteration in Fig. 3.</p>
 
-<p>Decades later, Frits Zernike demonstrated "phase contrast" microscopy, 
+<u>Amplification: </u>
+<p>The main difference to the nulling approach is that in each iteration, we always obtain a new estimate $\hat{x}$. Therefore also the probability map changes in every iteration, but stays in an ellipsoidal shape. Following the maximum of the distribution reveals some <i>wiggly</i>-motion (see video <i>Interference-Inference-amplification.avi</i> in the supplement. It is possible that a new estimate actually is worse than the previous one, which comes from the randomness of the measurement process. Nevertheless, on average, we end up much closer to the true value $x$, when all illumination photons have been used, as indicated in Fig. 3 and Tab. 1.</p>
 
- [<a class="citation" href="https://doi.org/10.1038/ncb1942" title="Das Phasenkontrastverfahren bei der mikroskopischen Beobachtung; F. Zernike; Z. technische Physik vol 16, p454–457 (1935)">Zernike 1935</a>,
-<a class="citation" href="https://doi.org/10.1016/S0031-8914(42)80035-X" title="Phase contrast, a new method for the microscopic observation of transparent objects; F. Zernike; Physica, Vol 9, p686-698 (1942)">Zernike 1942</a>].
+<strong> Animation: </strong> Example inference of an unkown object (red) with: <u>nulling</u> (left) and <u>amplification</u> (right) scheme. The probability distribution for each iteration is shown in blue.
+<table class="tg">
+<div class="row>
+	<div class="column">
+		<img src="./videos/Nulling_new.gif" alt="nulling_vid" width="48%" align="left"/> 
+	</div>
+	<div class="column">
+		<img src="./videos/Amplification_new.gif" alt="amplification_vid" width="48%" align="right"/>
+	</div>
+</div>
+</table><p></p>
 
-Zernike was awarded the 1953 Nobel prize in Physics <q>for his demonstration of the phase contrast method, especially for his <a href="https://www.nobelprize.org/prizes/physics/1953/summary/">invention of the phase contrast microscope</a>.</q>
-
-[<a class="citation" href="https://doi.org/10.1126/science.121.3141.345" title="How I discovered phase contrast; F. Zernike; Science 121.3141 (1955): 345-349.">Zernike 1955</a>].</p>
+<h4>Statistical analysis of our numerical results</h4>
+<p>For each experiment we have calculated the residuals: $\varepsilon = x - \hat{x}$. To analyze the statistical behavior we show the mean ($\bar{\varepsilon}$) and the standard deviation of the mean ($\sigma_{\bar{\varepsilon}}$), for each iteration by taking the $10 \cdot 10$ numerical experiments into account. The result is presented  in Fig. 3 a), where we show $|\varepsilon|$. In the first half of the inferring game, on average, the nulling scheme outperforms our amplification approach. However, towards higher iteration number we observe a clear enhancement inferring using $b>>1$ (see small inlet). Also note that the uncertainty in latter is much reduced (also see Tab.1). In Fig. 3 b & c) we show the standard deviation of the probability map along real and imaginary axis, for each iteration.</p> 
 
 <figure id="Figure_3">
-<img style="width:80%;" src="images/animations/positive_phase_contrast/animation.gif" alt="Figure 3" id="Figure_3_vid">
-<table class="figure_controls">
+<img src="./images/Comparison.png"
+ alt="Figure 3" id="Figure_3_image" >
+<figcaption><strong>Figure 3:</strong> Comparing the performance of the nulling (blue) and amplification (magenta) scheme for each iteration. We show the mean residual ($\bar{\varepsilon}$; line) $\pm$ one std. dev. deviation of the mean ($\sigma_{\bar{\varepsilon}}$), which we obtained by evaluating the inferring of 10 randomly chosen (amplitude & phase both uniformly distributed), each with 10 different tries. a) shows $|\varepsilon|$. b) & c) indicate the evolution of the probability map's variance along the real and imaginary axis. The small inlets show a zoomed region of each plot. The following parameters were used: $A = 100$; $a = 1$; $|b| = \sqrt{10}$. </figcaption>
+</figure><p></p>
+
+<p>Throughout the whole inferring process, the amplification algorithm results in a much smaller probability distribution, hence a more accurate estimation of $x$. This becomes also clear when looking at Fig. 2; overall the amplification algorithm tries to find a solution in the direct neighboorhood, while in the nulling scheme an updated estimate $\hat{x}$ might lie opposite to the previous choice.</p>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{font-family:Arial, sans-serif;font-size:12px;padding:8px 4px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:12px;font-weight:normal;padding:8px 4px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-baqh{text-align:center;vertical-align:top}
+.tg .tg-nrix{text-align:center;vertical-align:middle}
+</style>
+<table class="tg">
   <tr>
-  <td style="text-align: center">Relative phase between background and scattered light:<br><em>(Click the radio buttons to change the figure)</em> </td><td><form id="Figure_3_measurement" onchange="update_figure_3()">
-    <input type="radio" name="measurement" id="positive_phase_contrast/animation.gif" checked="checked">Constructive interference<br>
-    <input type="radio" name="measurement" id="negative_phase_contrast/animation.gif">Destructive interference
-  </form></td></tr>
-</table>
-<figcaption><strong>Figure 3: Animation illustrating the key concepts of phase-contrast microscopy.</strong> A red light pulse illuminates a point-like particle (small circle, left). The particle scatters some of this illumination light (expanding red circle). A lens (black oval, left) focuses the illumination pulse onto a beam block (small rectangle, center), which is partially opaque and attenuates the illumination, and also retards its phase.  Any scattered light that passes through the first lens and is not absorbed by the beam block will pass through a second lens (black oval, right) toward a multi-pixel detector (camera icon, far right), forming an image of the scattering particle on a bright background.</figcaption>
-</figure>
-<p></p>
+    <td class="tg-nrix">Photon budget \(A\)</td>
+    <td class="tg-nrix"></td>
+    <td class="tg-nrix">Nulling</td>
+    <td class="tg-nrix">Amplification</td>
+    <td class="tg-nrix">Nulling / Amplification</td>
+  </tr>
+  <tr>
+    <td class="tg-nrix" rowspan="4">10</td>
+    <td class="tg-nrix">\(\bar{\varepsilon}\)</td>
+    <td class="tg-nrix">0.3048</td>
+    <td class="tg-nrix">0.2767</td>
+    <td class="tg-nrix">1.1017</td>
+  </tr>
+  <tr>
+    <td class="tg-nrix">\(\sigma_{\bar{\varepsilon}}\)</td>
+    <td class="tg-nrix">0.0226</td>
+    <td class="tg-nrix">0.0156</td>
+    <td class="tg-nrix">1.4455</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">\(\bar{\sigma_r}\)</td>
+    <td class="tg-baqh">0.2400</td>
+    <td class="tg-baqh">0.1916</td>
+    <td class="tg-baqh">1.2526</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">\(\bar{\sigma_i}\)</td>
+    <td class="tg-baqh">0.2532</td>
+    <td class="tg-baqh">0.2081</td>
+    <td class="tg-baqh">1.1066</td>
+  </tr>
+  <tr>
+    <td class="tg-nrix" rowspan="4">40</td>
+    <td class="tg-baqh">\(\bar{\varepsilon}\)</td>
+    <td class="tg-baqh">0.1455</td>
+    <td class="tg-baqh">0.1315</td>
+    <td class="tg-baqh">1.1066</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">\(\sigma_{\bar{\varepsilon}}\)</td>
+    <td class="tg-baqh">0.0114</td>
+    <td class="tg-baqh">0.0066</td>
+    <td class="tg-baqh">1.7428</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">\(\bar{\sigma_r}\)</td>
+    <td class="tg-baqh">0.1264</td>
+    <td class="tg-baqh">0.1003</td>
+    <td class="tg-baqh">1.2605</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">\(\bar{\sigma_i}\)</td>
+    <td class="tg-baqh">0.1329</td>
+    <td class="tg-baqh">0.1088</td>
+    <td class="tg-baqh">1.2213</td>
+  </tr>
+  <tr>
+    <td class="tg-nrix" rowspan="4">100</td>
+    <td class="tg-baqh">\(\bar{\varepsilon}\)</td>
+    <td class="tg-baqh">0.1051</td>
+    <td class="tg-baqh">0.0861</td>
+    <td class="tg-baqh">1.2204</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">\(\sigma_{\bar{\varepsilon}}\)</td>
+    <td class="tg-baqh">0.0076</td>
+    <td class="tg-baqh">0.0044</td>
+    <td class="tg-baqh">1.7300</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">\(\bar{\sigma_r}\)</td>
+    <td class="tg-baqh">0.0839</td>
+    <td class="tg-baqh">0.0659</td>
+    <td class="tg-baqh">1.2740</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh">\(\bar{\sigma_i}\)</td>
+    <td class="tg-baqh">0.0872</td>
+    <td class="tg-baqh">0.0711</td>
+    <td class="tg-baqh">1.2266</td>
+  </tr>
+  <tabcaption><strong>Table 1:</strong> Mean (\(\bar{\varepsilon}\)) and the standard deviation of the mean (\(\sigma_{\bar{\varepsilon}}\)) of the residuals at the last iteration. Also the standard deviation of the probability distribution along the real (\(\bar{\sigma_r}\)) and the imaginary (\(\bar{\sigma_i}\)) axis is shown. All quantities are given for three different photon budgets (\(A\)). The amplification strategy beats the nulling scheme, as seen from the ratio \(>1\) in the last column. </tabcaption>
+</table><p></p>
 
-<p>As illustrated in Figure 3 above, phase contrast microscopy is conceptually similar to dark-field microscopy. To convert our cartoon dark-field microscope to a phase-contrast microscope, we simply replace the opaque beam block with a partially transmissive one. The attenuated illumination beam yields a uniform background on the detector, which interferes coherently with the scattered light image. The partially transmissive beam block also retards the phase of the background, and we can control this retardation (e.g. by tuning the thickness of the block).</p>
+<p>As expected, all quantities decrease when a higher photon budget is available as it is possible to obtain more information about the sample. When comparing both inferring schemes, we note that in all scenarios the amplification strategy gives better results, as predicted in our theoretical section.
+Note that this is not only true for a low photon budget. Even with higher illumination, the amplification strategy shows better results than the nulling approach.</p>
 
-<p>For an appropriate retardation, the interference between the scattered light and the uniform background can be primarily constructive (Figure 3 with <code>Relative phase between background and scattered light: Constructive interference</code>). In this mode, scattering objects in the sample appear as if they are emitting light, and this light is imaged onto the detector on a bright background.</p>
+<h3>Discussion</h3>
+<p>Our numerical results show that indeed the optical amplification algorithm gives better estimates than the previously suggested nulling scheme. We not only observe better estimations of $x$, also our prediction accuracy is higher. The probability distributions, generated in each iteration of both algorithms, are always more narrow in the amplification scheme (see Fig. 3 b & c). However, we observe a difference in the width along the real and imaginary axis.</p> 
 
-<p>It may not be immediately obvious why adding a bright background to a Nobel-prize-winning background-free measurement merits another Nobel prize. Certainly, adding background light to an optical measurement adds additional noise
+<p>It turns out, that our predicted factor of improvement ($\sqrt{2} \approx 1.4142$; eq. \eqref{eq:relsigma}) is not completely reached in our numerical results  (see Tab. 1). An explanation for this might, that our choice of $|b| = \sqrt{10}$ only partially resembles the assumption in our theoretical derivation ($b >> 1$). </p>
 
-[<a class="citation" href="https://doi.org/10.1007/978-0-387-45524-2" title="Handbook of Biological Confocal Microscopy, third edition; J. Pawley; Springer US, ISBN 978-0-387-25921-5, eBook ISBN 978-0-387-45524-2, Chapter 2 (2006)">Pawley 2006</a>].
+<p>Nevertheless, we have clearly shown that a <i>better</i> algorithm than the nulling scheme, suggested in [<a class="citation" href="https://zenodo.org/record/1463274" title="What is the signal-to-noise ratio of phase-contrast imaging? Can it be infinite?; Andrew G. York, Sanjay R. Varma; Pre-print">York</a>], can be found. It may be argued that a smarter algorithm than subsequent testing of possible candidates $\hat{x}$ might also achieve an estimate for $x$ in every single case. However, this modified nulling procedure will never be able to beat the hypothesis testing scheme in precision for the cases where no photons were detected. In such cases the nulling scheme is always "stuck" by assuming that its current estimate is already the correct solution, yet it is still on average further away from the true $x$ than what can be achieved by the amplification scheme III, because: $\sigma_\text{nulling} > \sigma_\text{amplification}$.</p>
 
-The critical detail is that Zernike added a bright <em>coherent</em> background, which adds both additional noise and additional signal. How much signal, and how much noise?</p>
+<p>However, there is an important aspect, which we did not analyze due to the initial assumption of a real-valued $b$: in the nulling scheme, the hypothesis ($x=\hat{x}$) is confirmed simultaneously for both the real and the imaginary part of the equation. Whereas the amplification scheme only yields information about the real part in both, the hypothesis--testing and the continuous--estimation approaches. A simple way to accommodate for this disadvantage would be to alternate $b$ between large real and large imaginary values similar to the suggestion in [<a class="citation" href="https://zenodo.org/record/1463274" title="What is the signal-to-noise ratio of phase-contrast imaging? Can it be infinite?; Andrew G. York, Sanjay R. Varma; Pre-print">York</a>]. This would half the photon budget along each direction, yielding a worsening of the estimate by $\sqrt{2}$, which would then modify eqn. \eqref{eq:relsigma} into $\sigma_\text{amplification}  = \sigma_\text{nulling}$. Nevertheless we argue that the amplification scheme is still superior, since it is not a hypothesis testing scheme but yields a new estimate in every test.</p>
 
-<p>The total intensity \(I\) at a pixel of the detector in Figure 3 is proportional to \(|\vec{E}_{s}|^{2} + |\vec{E}_{b}|^2 + 2 \vec{E}_{s}\cdot\vec{E}_{b}\cos{\theta}\), where \(\vec{E}_{s}\) is the electric field at that pixel due to light scattered by the point-like particle, \(\vec{E}_{b}\) is the electric field at that pixel due to the coherent background, and \(\theta\) is the relative phase between the two fields at that pixel
+<h3>Conclusion</h3>
+<p>We have shown that the SNR for interferometric compensation (nulling) for the practical case of estimating $x$ is, in contrast to the analysis of York et al. [<a class="citation" href="https://zenodo.org/record/1463274" title="What is the signal-to-noise ratio of phase-contrast imaging? Can it be infinite?; Andrew G. York, Sanjay R. Varma; Pre-print">York</a>], not infinite. Furthermore there is also a significantly better scheme for estimating $x$, which is simply choosing a very large (ideally infinite) value of $b$ (or $b'$). The numerical evaluation we have done is in good agreement with our theoretical finding and might lead to an even better inference algorithm in the future.
+%This result has implications, suggesting a possible algorithm could be based on dividing the available photon budget into $N$ fractions and choosing large values of $b_n = B \exp(i 2n\pi/N)$ with a large real value of $B$. 
+In a further micro-publication we extend these thoughts and analyze the full problem of estimating the complex value "$\hat{x}$" theoretically and by simulations.</p>
 
-[<a class="citation" href="https://books.google.com/books?id=SL1n9TuJ5YMC" title="Introduction to modern optics, second edition; Grant R. Fowles; Courier Corporation, ISBN 0486659577, 9780486659572, Chapter 3 (1989)">Fowles 1989</a>].
+<h4>Supplementary material:</h4>
+<p>With this publication we also publish the following two Python scripts:</p>
 
-The number of photoelectrons detected at that pixel during a measurement with duration \(\tau\) is drawn from a Poisson distribution with mean \(\epsilon \tau I\) and standard deviation \(\sqrt{\epsilon \tau I}\), where \(\epsilon\) is a proportionality constant depending on properties of the detector
 
-[<a class="citation" href="https://doi.org/10.1364/AO.4.000079" title="Noise in Photoemission Current; D. L. Fried; Applied Optics Vol. 4, Issue 1, pp. 79-80 (1965) ">Fried 1965</a>].</p>
+<ul>
+	<li> <u>Interference-Inference-graphics.py:</u> The script shows the inferring process for a single experiment (single photon budget). Besides a visualization of the unit circle, the estimated $x$-values and the probability map, there is also an updating graph showing some of the statistical quantities changing in each iteration. </li>
+	<li> <u>Interference-Inference-statistics.py:</u> This script performs several experiments (for a given photon budget) and evaluates some statistical quantities, shown in Tab. 1. The only output in the end is given in the editor, no graphical visualization or other user information. </li>
+</ul>
 
-<p>In the case of dark-field microscopy, \(\vec{E}_{b} = 0\). If there is no "stray" light or other noise sources, the presence of the point-like particle changes the mean number of photoelectrons detected by our pixel, from zero to \(\epsilon \tau |\vec{E}_{s}|^{2}\). The standard deviation in the number of photoelectrons is the square root of this mean. If we call the change in mean photoelectron number due to the point-like particle the "signal", and the standard deviation the "noise", the per-pixel signal-to-noise ratio of dark-field microscopy is \(\frac{\epsilon \tau |\vec{E}_{s}|^{2}}{\sqrt{\epsilon \tau |\vec{E}_{s}|^{2}}} = \sqrt{\epsilon \tau} |\vec{E}_{s}|\).</p>
+<p>Additionally we also provide two videos visualizing the inferring process for both strategies which are named:
+<em>Interference-Inference-nulling.avi</em> and <em>Interference-Inference-amplification.avi</em> </p>
 
-<p>In the case of phase contrast microscopy, the presence of the point-like particle changes the mean number of photoelectrons from \(\epsilon \tau |\vec{E}_{b}|^{2}\) to \(\epsilon \tau \left(|\vec{E}_{s}|^{2} + |\vec{E}_{b}|^2 + 2 \vec{E}_{s}\cdot\vec{E}_{b}\cos{\theta}\right)\). If the background \(\epsilon \tau |\vec{E}_{b}|^{2}\) is extremely stable and well calibrated (<a href="./index.html#physics_question" target="_self">as discussed above</a>), and we call the change in mean photoelectron number due to the point-like particle the "signal", and the standard deviation the "noise", the per-pixel signal-to-noise ratio of phase-contrast microscopy is \(\frac{\epsilon \tau \left(|\vec{E}_{s}|^{2} + |\vec{E}_{b}|^2 + 2 \vec{E}_{s}\cdot\vec{E}_{b}\cos{\theta}\right) - \epsilon \tau |\vec{E}_{b}|^{2}}{\sqrt{\epsilon \tau \left(|\vec{E}_{s}|^{2} + |\vec{E}_{b}|^2 + 2 \vec{E}_{s}\cdot\vec{E}_{b}\cos{\theta}\right)}} = \sqrt{\epsilon \tau }\frac{|\vec{E}_{s}|^{2} + 2 \vec{E}_{s}\cdot\vec{E}_{b}\cos{\theta}}{\sqrt{|\vec{E}_{s}|^{2} + |\vec{E}_{b}|^2 + 2 \vec{E}_{s}\cdot\vec{E}_{b}\cos{\theta}}}\).</p>
+<h4>Acknowledgment:</h4>
+<p>We would like to thanks Andrew York for posing and advertising this interesting problem and his enthusiastic talks about this topic on conferences.</p> 
 
-<p>In the limits \(|\vec{E}_{s}| \ll |\vec{E}_{b}|\) (large background), \(\vec{E}_{s} \cdot \vec{E}_{b} = |\vec{E}_{s}||\vec{E}_{b}|\) (parallel fields) and \(|\cos{\theta}| \gg \frac{|\vec{E}_{s}|}{|\vec{E}_{b}|}\) (retardance tuned for high-contrast interference), we can make the approximations \(|\vec{E}_{s}|^{2} \ll 2 \vec{E}_{s}\cdot\vec{E}_{b}\cos{\theta} \ll |\vec{E}_{b}|^{2}\) , and the signal-to-noise ratio of phase-constrast microscopy simplifies considerably to \(\sqrt{\epsilon \tau }\frac{2 |\vec{E}_{s}||\vec{E}_{b}|\cos{\theta}}{\sqrt{|\vec{E}_{b}|^2}} = 2\sqrt{\epsilon \tau } |\vec{E}_{s}|\cos{\theta}\). In this limit, we see that adding a coherent background with the correct phase can double the signal-to-noise ratio of dark-field microscopy!</p>
-
-<p>I suspect that the 1953 Nobel was given for a more practical reason: in addition to doubling the signal-to-noise ratio, phase contrast microscopy (with well-tuned retardance) greatly amplifies both the photon-counting noise <em>and the signal</em>. Other sources of noise (e.g. stray light) are "washed out" by the coherently amplified signal. Zernike discusses this point in his Nobel lecture:</p>
-
-<blockquote>In my own experiments I could go down to 4-percent transmission, that is, a 5-times enhanced contrast, the limit being set by the unavoidable stray light. It is only under especially favorable circumstances that a higher increase has been attained by the French astronomer Lyot. In his study of the minute ripples of polished lens surfaces he had independently rediscovered phase contrast and could use strips that diminished the amplitude to one-thirtieth, so that ripples only one one-thousandth of a wavelength high showed in good contrast. [<a class="citation" href="https://doi.org/10.1126/science.121.3141.345" title="How I discovered phase contrast; F. Zernike; Science 121.3141 (1955): 345-349.">Zernike 1955</a>]</blockquote><p></p>
-
-<p>This raises a natural question: in the case of <em>no</em> stray light, for a given signal field \(\vec{E}_{s}\), what choice of background field amplitude \(|\vec{E}_{b}|\) and relative phase \(\theta\) will give optimal signal-to-noise ratio? Naively inspecting our previous equations leads us to a curious result. If we happen to choose a background field that perfectly cancels our signal field, that is, \(|\vec{E}_{s}|^{2} + |\vec{E}_{b}|^2 + 2 \vec{E}_{s}\cdot\vec{E}_{b}\cos{\theta} = 0\), then our noise goes to zero, but our signal does not!</p>
-
-<p>This is the origin of the question in our title, and the math, coding, and physics questions that follow. While I have no expectation that "infinite" signal-to-noise ratio allows perfect inference of our sample's optical properties, it's still highly suggestive, and interesting to explore what inference it <em>does</em> allow. For mathematical simplicity, I reduced the multi-pixel phase-contrast microscope shown in Figure 3 to the single-pixel interferometer shown in Figure 1, but clearly insight in one case leads directly to insight in the other. If the "infinite" signal-to-noise ratio case actually yields superior inference, one could imagine imaging methods that tune a multi-pixel spatial light modulator in one arm of an interferometer to cancel the fields transmitted by an unknown object in the other arm.</p>
-
-<p>I also think the underlying inference question is a timeless combination of importance and simplicity, which is why I've reduced it to a math puzzle, a coding challenge, and a physics question, rather than simply answering it. I think this document does more good as a challenge than as a reference.</p>
-
-<p>Who wants to play <a href="./index.html#math_puzzle" target="_self">my game</a>?</p>
+<h4>Competing financial interests:</h4>
+<p>The authors declare no competing financial interests.</p>
 
 <noscript>
 <h3>Your browser doesn't seem to support Javascript. This document uses Javascript to generate a reference list, which would normally be displayed here. Either activate Javascript, or use the "Download PDF" link above if you want to see the reference list.</h3></noscript>
 
 </section>
 <footer>
-  <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="./images/cc_by_4p0.png"></a>
+  <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
 
   <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a></small></p>
 </footer>
