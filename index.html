@@ -17,10 +17,11 @@ Based on this theme: https://github.com/broccolini/dinky , which mentioned that 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="citation_title" content="Measuring by Darkness? Let there be light!">
-    <meta name="citation_author" content="Rainer Heintzmann, Jan Becker">
+    <meta name="citation_author" content="Rainer Heintzmann">
+    <meta name="citation_author" content="Jan Becker">  
     <meta name="citation_publication_date" content="2019/01/28">
     <meta name="citation_journal_title" content="Github.io">
-    <meta name="citation_pdf_url" content="https://github.com/beckerjn92/Measuring-by-Darkness-Let-there-be-light/blob/master/Measuring_by_Darkness_Let_there_be_light.pdf">
+   <meta name="citation_pdf_url" content="http://beckerjn92.github.io/Measuring-by-Darkness-Let-there-be-light/Measuring_by_Darkness_Let_there_be_light.pdf">
     <title>Measuring by Darkness? Let there be light! by Rainer Heintzmann and Jan Becker</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
@@ -59,7 +60,7 @@ Based on this theme: https://github.com/broccolini/dinky , which mentioned that 
         <ul>
           <li class="download"><a class="buttons" href="https://github.com/beckerjn92/Measuring-by-Darkness-Let-there-be-light/zipball/master">Download ZIP</a></li>
           <li><a class="buttons github" href="https://github.com/beckerjn92/Measuring-by-Darkness-Let-there-be-light">View On GitHub</a></li>
-          <li><a class="buttons pdf" href="https://github.com/beckerjn92/Measuring-by-Darkness-Let-there-be-light/blob/master/Measuring_by_Darkness_Let_there_be_light.pdf">Download PDF</a></li>
+          <li><a class="buttons pdf" href="http://beckerjn92.github.io/Measuring-by-Darkness-Let-there-be-light/Measuring_by_Darkness_Let_there_be_light.pdf">Download PDF</a></li>
         </ul>
         <p class="header">This project is maintained by <a class="header name" href="https://github.com/beckerjn92">Jan Becker</a>.</p>
       </header>
@@ -77,7 +78,7 @@ The real text begins here.
 <p class="contact_email"><sup>*</sup>Email: <a href="mailto:heintzmann@gmail.com" target="_self">heintzmann@gmail.com</a></p>
 
 <h3>Abstract</h3>
-<p class="abstract">Building on work of York et al. [<a class="citation" href="https://zenodo.org/record/146327" title="What is the signal-to-noise ratio of phase-contrast imaging? Can it be infinite?; Andrew G. York, Sanjay R. Varma; Pre-print.">York</a>], we analyze a particular aspect of the following optics problem: Is the
+<p class="abstract">Building on work of York et al. [<a class="citation" href="https://doi.org/10.5281/zenodo.1463273" title="What is the signal-to-noise ratio of phase-contrast imaging? Can it be infinite?; Andrew G. York, Sanjay R. Varma; Pre-print.">York 2018</a>], we analyze a particular aspect of the following optics problem: Is the
 signal to noise ratio (SNR) of interferometric nulling with a given photon budget infinite? We compare the previously
 stated expression for the SNR with a different way of estimating an unknown amplitude: interfering with a very strong
 reference wave of known strength, i.e. optical amplification. Our analysis reveals that optical amplification is in
@@ -110,7 +111,7 @@ y_i & = & |a_i x + b_i|^2
 <figure id="Figure_1">
 <img src="./images/Setup.png"
  alt="Figure 1" id="Figure_1_image" >
-<figcaption><strong>Figure 1:</strong> Mach-Zehnder type interferometer as described by [<a class="citation" href="https://zenodo.org/record/1463274" title="What is the signal-to-noise ratio of phase-contrast imaging? Can it be infinite?; Andrew G. York, Sanjay R. Varma; Pre-print on Zenodo.">York</a>]. One arm of the interferometer contains the unknown object \(x\)+  spatial light modulator (SLM) $a$. The reference arm only a single SLM $b$. Both SLM's are able to perform a complex modulation of the light distribution, hence change amplitude and phase. In the constructive channel we obtain the signal $y = |ax + b|^2$. </figcaption>
+<figcaption><strong>Figure 1:</strong> Mach-Zehnder type interferometer as described by [<a class="citation" href="https://doi.org/10.5281/zenodo.1463273" title="What is the signal-to-noise ratio of phase-contrast imaging? Can it be infinite?; Andrew G. York, Sanjay R. Varma; Pre-print.">York 2018</a>]. One arm of the interferometer contains the unknown object &x$ + spatial light modulator (SLM) $a$. The reference arm only comprises a single SLM $b$. Both SLMs are able to perform a complex modulation of the light distribution, hence change amplitude and phase. In the constructive channel we obtain the signal $y = |ax + b|^2$. </figcaption>
 </figure><p></p>
 
 <p>The Poisson process $\mathcal{P} \{ y \}$ has the probability distribution:</p>
@@ -119,7 +120,7 @@ y_i & = & |a_i x + b_i|^2
 \label{eqn:Poisson}
 \end{equation}
 
-<p>The guessing "game" as described in [<a class="citation" href="https://zenodo.org/record/1463274" title="What is the signal-to-noise ratio of phase-contrast imaging? Can it be infinite?; Andrew G. York, Sanjay R. Varma; Pre-print">York</a>] is to estimate $x$ by a smart choice of $a_i$ and $b_i$  with the additional limitation of a finite illumination budget $A$, which is given as: $\sum_{i=1}^{N}{|a_i|^2} \leq A$ with $N$ being the number of experiments performed. York et al. continue to analyze this problem and arrive at the following expression for the signal-to-noise ratio (SNR):</p>
+<p>The guessing "game" as described in [<a class="citation" href="https://doi.org/10.5281/zenodo.1463273" title="What is the signal-to-noise ratio of phase-contrast imaging? Can it be infinite?; Andrew G. York, Sanjay R. Varma; Pre-print.">York 2018</a>] is to estimate $x$ by a smart choice of $a_i$ and $b_i$  with the additional limitation of a finite illumination budget $A$, which is given as: $\sum_{i=1}^{N}{|a_i|^2} \leq A$ with $N$ being the number of experiments performed. York et al. continue to analyze this problem and arrive at the following expression for the signal-to-noise ratio (SNR):</p>
 \begin{equation}
 SNR =\frac{|a+b|^2}{|a x+b|} -| a x+b|
 \label{eqn:SNR}
@@ -128,16 +129,16 @@ SNR =\frac{|a+b|^2}{|a x+b|} -| a x+b|
 <p>which has the surprising property of becoming infinite if the interferometer is adjusted for perfect configuration: $b=-ax$. This is the point which our micro-publication is addressing: Is the SNR of such an interferometric measurement for estimating $x$ really infinite?</p>
 
 <h3>Nulling or amplification?</h3>
-The first point to notice in eqn. \eqref{eqn:Intensity} is that the result of each measurement is independent of the choice of a global phase, as the magnitude squared is calculated. Since both, $a_i$ and $b_i$, are permitted freely to choose their phase, a single relative phase suffices and we can set $a_i$ to always be real valued without loss of generality. Next we can separate the problem into a real and an imaginary part, which are added in quadrature. We therefore first analyze the real part of the problem by also assuming $x$ and $b_i$ to be real.
-To gain some insight, we now further assume that all $N$ experiments refer to the same choice of $a_i$. Hence we can replace eqn. \eqref{eqn:Intensity} with a single experiment using all the available photon budget at once:
+The first point to notice in eqn. $$\eqref{eqn:Intensity}$$ is that the result of each measurement is independent of the choice of a global phase, as the magnitude squared is calculated. Since both, $a_i$ and $b_i$, are permitted freely to choose their phase, a single relative phase suffices and we can set $a_i$ to always be real valued without loss of generality. Next we can separate the problem into a real and an imaginary part, which are added in quadrature. We therefore first analyze the real part of the problem by also assuming $x$ and $b_i$ to be real.
+To gain some insight, we now further assume that all $N$ experiments refer to the same choice of $a_i$. Hence we can replace eqn. $$\eqref{eqn:Intensity}$$ with a single experiment using all the available photon budget at once:
 \begin{equation}
 y=|\sqrt{A} x + b|^2
 \label{eqn:OneStep}
 \end{equation}
 
-<p>The infinite SNR in a nulling experiment as stated in eqn. \eqref{eqn:SNR} does not consider that we may have estimated $x$ wrongly and thus chose a wrong value for $a$, but nevertheless obtained zero photons in our measurement due to the <i>limited</i> overall photon budget. </p>
+<p>The infinite SNR in a nulling experiment as stated in eqn. $$\eqref{eqn:SNR}$$ does not consider that we may have estimated $x$ wrongly and thus chose a wrong value for $a$, but nevertheless obtained zero photons in our measurement due to the <em>limited</em> overall photon budget. </p>
 
-<p>In our work, we aim to compare the estimation of $x$ by <i>nulling</i> (setting $b=-\sqrt{A} x$) with another scheme where $b\gg1$. This principle, termed <i>optical amplification</i>, is known for example in optical coherence tomography (OCT) as a method to eliminate read noise [<a class="citation" href="https://patents.google.com/patent/US6900943B2/en" title="Optical amplification in coherent optical frequency modulated continuous wave reflectometry; Peter E. Andersen, Anders Bjarklev, Andrea Tycho; Patent">Andersen</a>]. Here we do not analyze it in the context of read noise, rather as a general interferometric technique and compare it with the nulling scheme as suggested by York et al.</p>
+<p>In our work, we aim to compare the estimation of $x$ by <em>nulling</em> (setting $b=-\sqrt{A} x$) with another scheme where $b\gg1$. This principle, termed <em>optical amplification</em>, is known for example in optical coherence tomography (OCT) as a method to eliminate read noise [<a class="citation" href="https://patents.google.com/patent/US6900943B2/en" title="Optical amplification in coherent optical frequency modulated continuous wave reflectometry; Peter E. Andersen, Anders Bjarklev, Andrea Tycho; US Patent 6900943B2">Andersen 2001</a>]. Here we do not analyze it in the context of read noise, rather as a general interferometric technique and compare it with the nulling scheme as suggested by York et al.</p>
 
 <h3>Comparison of both approaches</h3>
 <p>For a fair comparison it is essential to construct a thought experiment treating the schemes to compare equally.
@@ -146,14 +147,14 @@ This is not trivial: the nulling scheme (I) is a hypothesis test. It is able to 
 <h4>A new thought experiment</h4>
 <p>To nevertheless be able to compare both schemes on equal terms we designed the following hypothesis testing scheme: for a given (unknown) $x$ the range $x \in [-1,1]$ is tested in equal steps $S_x$ searching for $x = \hat{x}$. For the nulling scheme, consistency is given by detecting zero photons, whereas for the amplification scheme we have to define a different consistency rule: At each $x$ many such tests are performed and we evaluate and plot the frequency of consistent results.</p>
 
-<p>In this case, being consistent means that the detected number of photons ($Y$) is within a small distance $\Delta y$ from the predicted number of photons (assuming $\hat{x} = x$), given the chosen value of $b$. To further simplify our analysis, we approximate $\Delta y$ to be small enough that there is no significant change of the probability of detecting photons over this range, i.e. the probability of detecting photons in the range $Y = y\pm\Delta y/2$ is approximately given by $\Delta y P(y|y)$. Since we further assumed $b$ to be large, we can approximate the Poisson distribution (eqn. \eqref{eqn:Poisson}) by a Gaussian probability density, with a variance equal to the expectancy:</p>
+<p>In this case, being consistent means that the detected number of photons ($Y$) is within a small distance $\Delta y$ from the predicted number of photons (assuming $\hat{x} = x$), given the chosen value of $b$. To further simplify our analysis, we approximate $\Delta y$ to be small enough that there is no significant change of the probability of detecting photons over this range, i.e. the probability of detecting photons in the range $Y = y\pm\Delta y/2$ is approximately given by $\Delta y P(y|y)$. Since we further assumed $b$ to be large, we can approximate the Poisson distribution (eqn. $$\eqref{eqn:Poisson}$$) by a Gaussian probability density, with a variance equal to the expectancy:</p>
 \begin{equation}
 P(Y|y) = \frac{\exp{\left(\frac{-|Y-y|^2}{2y}\right)}}{\sqrt{2\pi y}}
 \label{eqn:Gaussian}
 \end{equation}
 
 <h4>Comparing both inference schemes</h4>
-<p>Now we are able to compare the quality to estimate $\hat{x}$ in our thought experiments. For the nulling scheme, we obtain the probability to measure zero photons according to eqn. \eqref{eqn:Poisson} as:</p> 
+<p>Now we are able to compare the quality to estimate $\hat{x}$ in our thought experiments. For the nulling scheme, we obtain the probability to measure zero photons according to eqn. $$\eqref{eqn:Poisson}$$ as:</p> 
 \begin{eqnarray}
     y & = & |\sqrt{A} x - \sqrt{A} \hat{x}|^2 = A |x-\hat{x}|^2 \nonumber \\
     P(Y|y) & = & \frac{\left( A |x - \hat{x}|^2\right)^Y}{Y !} \exp(-A |x - \hat{x}|^2) \nonumber \\
@@ -165,20 +166,20 @@ P(Y|y) = \frac{\exp{\left(\frac{-|Y-y|^2}{2y}\right)}}{\sqrt{2\pi y}}
         y = |\sqrt{A}x - \sqrt{A}b'|^2 = A |x - b'|
 \end{equation}
 
-<p>We can express eqn. \eqref{eqn:Gaussian} as:</p>
+<p>We can express eqn. $$\eqref{eqn:Gaussian}$$ as:</p>
 \begin{eqnarray}
     P(Y|y) & = & \Delta y \frac{\exp(-\frac{|Y-y|^2}{2y})}{\sqrt{2\pi y}} \nonumber \\
     & = & \Delta y \frac{\exp(-\frac{|A |x-b'|^2-A |\hat{x}-b'|^2|^2}{2A |\hat{x}-b'|^2})}{\sqrt{2\pi A} |\hat{x}-b'|}
     \label{eq:approximation}
 \end{eqnarray}
-<p>With $Y = A |x-b'|^2$ the <i>actual</i> measured value and $y= A |\hat{x} - b'|^2$ our <i>estimated</i> measurement result. The exponent can be simplified as follows:</p>
+<p>With $Y = A |x-b'|^2$ the <em>actual</em> measured value and $y= A |\hat{x} - b'|^2$ our <em>estimated</em> measurement result. The exponent can be simplified as follows:</p>
 \begin{eqnarray}
 - \frac{A |x^2 - 2b'x - \hat{x}^2 + 2b'\hat{x}|^2}{2(\hat{x}^2 - 2b'\hat{x} + b'^2)} 
 \approx  - \frac{A | - 2b'(x  - \hat{x})|^2}{2b'^2} = - 2 A |x - \hat{x}|^2
 \end{eqnarray}
 
 <p>Using the fact that $x << b'$ and $\hat{x} << b'$.</p>
-<p>With this we can express eqn. \eqref{eq:approximation} as:</p>
+<p>With this we can express eqn. $$\eqref{eq:approximation}$$ as:</p>
 \begin{equation}
     P(Y | y) \approx \Delta y \frac{\exp \left(-2 A |x - \hat{x}|^2\right)}{\sqrt{2 \pi A} b'}
 \end{equation}
@@ -197,14 +198,14 @@ P(Y|y) = \frac{\exp{\left(\frac{-|Y-y|^2}{2y}\right)}}{\sqrt{2\pi y}}
 <p>Leading to the interesting result that the estimation based on the amplification scheme seems to be more precise than the estimation based on interferometric nulling.</p>
 
 <h4>Estimating from each individual measurement</h4>
-<p>However, this leaves us with the problem that the overall success rate of our amplification hypothesis test is fairly low, since $\Delta y$ has to be chosen much smaller than the width of the probability distribution to render our approximation in eqn. \eqref{eq:approximation} valid. 
+<p>However, this leaves us with the problem that the overall success rate of our amplification hypothesis test is fairly low, since $\Delta y$ has to be chosen much smaller than the width of the probability distribution to render our approximation in eqn. $$\eqref{eq:approximation}$$ valid. 
 Yet, if we chose a different estimation scheme, using a large reference $b$, but estimating $\hat{x}$ directly from each measurement as:</p>
 \begin{eqnarray}
 y & = & A|x-b'|^2 \nonumber \\
 \rightarrow \hat{x} & = & b'-\sqrt{y/A}
 \end{eqnarray}
 
-<p>for large positive $b'$. This yields a probability distribution equal to the hypothesis testing scheme (eqn. \eqref{eq:approximation}), with the only difference that in each case a solution is found leading to an estimate and there is no experiment which gets rejected by the hypothesis test. This is in all respects superior compared to the hypothesis testing scheme using interferometric nulling. Not only is an estimation possible every single time, but even for the cases where the experimental outcome is not rejected, its estimate is on average closer to the true value $x$.</p>
+<p>for large positive $b'$. This yields a probability distribution equal to the hypothesis testing scheme (eqn. $$\eqref{eq:approximation}$$), with the only difference that in each case a solution is found leading to an estimate and there is no experiment which gets rejected by the hypothesis test. This is in all respects superior compared to the hypothesis testing scheme using interferometric nulling. Not only is an estimation possible every single time, but even for the cases where the experimental outcome is not rejected, its estimate is on average closer to the true value $x$.</p>
 
 <h3>Numerical results</h3>
 <p>To verify our theoretical findings, we did some numerical evaluation of both inferring schemes.</p>
@@ -218,14 +219,14 @@ For each photon budget, we inferred 10 different values of $x$, which have been 
 <figure id="Figure_2">
 <img src="./images/AlgorithmVisualisation2.png"
  alt="Figure 2" id="Figure_2_image" >
-<figcaption><strong>Figure 2:</strong> Graphical comparison of both inferring schemes; <i>nulling</i> (top) and <i>amplification</i> (bottom) for 5 different inferring steps. Each graph shows the true value $x$ (red), the current estimation $\hat{x}$ (yellow) and the corresponding probability map (blue; darker = higher probability). The following parameters were used: $A = 40$; $a = 1$; $|b| = \sqrt{10}$. See also Video 1 & Video 2 for a more traceable visualization. </figcaption>
+<figcaption><strong>Figure 2:</strong> Graphical comparison of both inferring schemes; <em>nulling</em> (top) and <em>amplification</em> (bottom) for 5 different inferring steps. Each graph shows the true value $x$ (red), the current estimation $\hat{x}$ (yellow) and the corresponding probability map (blue; darker = higher probability). The following parameters were used: $A = 40$; $a = 1$; $|b| = \sqrt{10}$. See also Video 1 & Video 2 for a more traceable visualization. </figcaption>
 </figure><p></p>
 
 <u>Nulling: </u>
-<p>Already in the beginning of the iterations a photon is measured; hence indicating that the current estimate can not be the correct one. As the intention of the nulling scheme is to achieve perfect interferometric canceling, overall there wont be many photons being measured. Hence an update of the probability map happens rarely (also see video <i>Interference-Inference-nulling.avi </i>} in the supplement). When a photon is measured the probability map changes (Fig. 2, top), as we must include a zero probability at the position of our current estimate $\hat{x}$. The more photons are measured the more irregularly shaped the respective probability distribution gets. The final guess ended up close to the correct value of $x$. We show the residuals throughout the iteration in Fig. 3.</p>
+<p>Already in the beginning of the iterations a photon is measured; hence indicating that the current estimate can not be the correct one. As the intention of the nulling scheme is to achieve perfect interferometric canceling, overall there wont be many photons being measured. Hence an update of the probability map happens rarely (also see video <em>Interference-Inference-nulling.avi </em>} in the supplement). When a photon is measured the probability map changes (Fig. 2, top), as we must include a zero probability at the position of our current estimate $\hat{x}$. The more photons are measured the more irregularly shaped the respective probability distribution gets. The final guess ended up close to the correct value of $x$. We show the residuals throughout the iteration in Fig. 3.</p>
 
 <u>Amplification: </u>
-<p>The main difference to the nulling approach is that in each iteration, we always obtain a new estimate $\hat{x}$. Therefore also the probability map changes in every iteration, but stays in an ellipsoidal shape. Following the maximum of the distribution reveals some <i>wiggly</i>-motion (see video <i>Interference-Inference-amplification.avi</i> in the supplement. It is possible that a new estimate actually is worse than the previous one, which comes from the randomness of the measurement process. Nevertheless, on average, we end up much closer to the true value $x$, when all illumination photons have been used, as indicated in Fig. 3 and Tab. 1.</p>
+<p>The main difference to the nulling approach is that in each iteration, we always obtain a new estimate $\hat{x}$. Therefore also the probability map changes in every iteration, but stays in an ellipsoidal shape. Following the maximum of the distribution reveals some <em>wiggly</emd>-motion (see video <em>Interference-Inference-amplification.avi</em> in the supplement. It is possible that a new estimate actually is worse than the previous one, which comes from the randomness of the measurement process. Nevertheless, on average, we end up much closer to the true value $x$, when all illumination photons have been used, as indicated in Fig. 3 and Tab. 1.</p>
 
 <strong> Animation: </strong> Example inference of an unkown object (red) with: <u>nulling</u> (left) and <u>amplification</u> (right) scheme. The probability distribution for each iteration is shown in blue.
 <table class="tg">
@@ -349,14 +350,14 @@ Note that this is not only true for a low photon budget. Even with higher illumi
 <h3>Discussion</h3>
 <p>Our numerical results show that indeed the optical amplification algorithm gives better estimates than the previously suggested nulling scheme. We not only observe better estimations of $x$, also our prediction accuracy is higher. The probability distributions, generated in each iteration of both algorithms, are always more narrow in the amplification scheme (see Fig. 3 b & c). However, we observe a difference in the width along the real and imaginary axis.</p> 
 
-<p>It turns out, that our predicted factor of improvement ($\sqrt{2} \approx 1.4142$; eq. \eqref{eq:relsigma}) is not completely reached in our numerical results  (see Tab. 1). An explanation for this might, that our choice of $|b| = \sqrt{10}$ only partially resembles the assumption in our theoretical derivation ($b >> 1$). </p>
+<p>It turns out, that our predicted factor of improvement ($\sqrt{2} \approx 1.4142$; eq. $$\eqref{eq:relsigma}$$) is not completely reached in our numerical results  (see Tab. 1). An explanation for this might, that our choice of $|b| = \sqrt{10}$ only partially resembles the assumption in our theoretical derivation ($b >> 1$). </p>
 
-<p>Nevertheless, we have clearly shown that a <i>better</i> algorithm than the nulling scheme, suggested in [<a class="citation" href="https://zenodo.org/record/1463274" title="What is the signal-to-noise ratio of phase-contrast imaging? Can it be infinite?; Andrew G. York, Sanjay R. Varma; Pre-print">York</a>], can be found. It may be argued that a smarter algorithm than subsequent testing of possible candidates $\hat{x}$ might also achieve an estimate for $x$ in every single case. However, this modified nulling procedure will never be able to beat the hypothesis testing scheme in precision for the cases where no photons were detected. In such cases the nulling scheme is always "stuck" by assuming that its current estimate is already the correct solution, yet it is still on average further away from the true $x$ than what can be achieved by the amplification scheme III, because: $\sigma_\text{nulling} > \sigma_\text{amplification}$.</p>
+<p>Nevertheless, we have clearly shown that a <em>better</em> algorithm than the nulling scheme, suggested in [<a class="citation" href="https://doi.org/10.5281/zenodo.1463273" title="What is the signal-to-noise ratio of phase-contrast imaging? Can it be infinite?; Andrew G. York, Sanjay R. Varma; Pre-print.">York 2018</a>], can be found. It may be argued that a smarter algorithm than subsequent testing of possible candidates $\hat{x}$ might also achieve an estimate for $x$ in every single case. However, this modified nulling procedure will never be able to beat the hypothesis testing scheme in precision for the cases where no photons were detected. In such cases the nulling scheme is always "stuck" by assuming that its current estimate is already the correct solution, yet it is still on average further away from the true $x$ than what can be achieved by the amplification scheme III, because: $\sigma_\text{nulling} > \sigma_\text{amplification}$.</p>
 
-<p>However, there is an important aspect, which we did not analyze due to the initial assumption of a real-valued $b$: in the nulling scheme, the hypothesis ($x=\hat{x}$) is confirmed simultaneously for both the real and the imaginary part of the equation. Whereas the amplification scheme only yields information about the real part in both, the hypothesis--testing and the continuous--estimation approaches. A simple way to accommodate for this disadvantage would be to alternate $b$ between large real and large imaginary values similar to the suggestion in [<a class="citation" href="https://zenodo.org/record/1463274" title="What is the signal-to-noise ratio of phase-contrast imaging? Can it be infinite?; Andrew G. York, Sanjay R. Varma; Pre-print">York</a>]. This would half the photon budget along each direction, yielding a worsening of the estimate by $\sqrt{2}$, which would then modify eqn. \eqref{eq:relsigma} into $\sigma_\text{amplification}  = \sigma_\text{nulling}$. Nevertheless we argue that the amplification scheme is still superior, since it is not a hypothesis testing scheme but yields a new estimate in every test.</p>
+<p>However, there is an important aspect, which we did not analyze due to the initial assumption of a real-valued $b$: in the nulling scheme, the hypothesis ($x=\hat{x}$) is confirmed simultaneously for both the real and the imaginary part of the equation. Whereas the amplification scheme only yields information about the real part in both, the hypothesis--testing and the continuous--estimation approaches. A simple way to accommodate for this disadvantage would be to alternate $b$ between large real and large imaginary values similar to the suggestion in [<a class="citation" href="https://doi.org/10.5281/zenodo.1463273" title="What is the signal-to-noise ratio of phase-contrast imaging? Can it be infinite?; Andrew G. York, Sanjay R. Varma; Pre-print.">York 2018</a>]. This would half the photon budget along each direction, yielding a worsening of the estimate by $\sqrt{2}$, which would then modify eqn. $$\eqref{eq:relsigma}$$ into $\sigma_\text{amplification}  = \sigma_\text{nulling}$. Nevertheless we argue that the amplification scheme is still superior, since it is not a hypothesis testing scheme but yields a new estimate in every test.</p>
 
 <h3>Conclusion</h3>
-<p>We have shown that the SNR for interferometric compensation (nulling) for the practical case of estimating $x$ is, in contrast to the analysis of York et al. [<a class="citation" href="https://zenodo.org/record/1463274" title="What is the signal-to-noise ratio of phase-contrast imaging? Can it be infinite?; Andrew G. York, Sanjay R. Varma; Pre-print">York</a>], not infinite. Furthermore there is also a significantly better scheme for estimating $x$, which is simply choosing a very large (ideally infinite) value of $b$ (or $b'$). The numerical evaluation we have done is in good agreement with our theoretical finding and might lead to an even better inference algorithm in the future.
+<p>We have shown that the SNR for interferometric compensation (nulling) for the practical case of estimating $x$ is, in contrast to the analysis of York et al. [<a class="citation" href="https://doi.org/10.5281/zenodo.1463273" title="What is the signal-to-noise ratio of phase-contrast imaging? Can it be infinite?; Andrew G. York, Sanjay R. Varma; Pre-print.">York 2018</a>], not infinite. Furthermore there is also a significantly better scheme for estimating $x$, which is simply choosing a very large (ideally infinite) value of $b$ (or $b'$). The numerical evaluation we have done is in good agreement with our theoretical finding and might lead to an even better inference algorithm in the future.
 %This result has implications, suggesting a possible algorithm could be based on dividing the available photon budget into $N$ fractions and choosing large values of $b_n = B \exp(i 2n\pi/N)$ with a large real value of $B$. 
 In a further micro-publication we extend these thoughts and analyze the full problem of estimating the complex value "$\hat{x}$" theoretically and by simulations.</p>
 
