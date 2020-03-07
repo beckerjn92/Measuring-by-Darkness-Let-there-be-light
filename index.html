@@ -129,14 +129,14 @@ SNR =\frac{|a+b|^2}{|a x+b|} -| a x+b|
 <p>which has the surprising property of becoming infinite if the interferometer is adjusted for perfect configuration: $b=-ax$. This is the point which our micro-publication is addressing: Is the SNR of such an interferometric measurement for estimating $x$ really infinite?</p>
 
 <h3>Nulling or amplification?</h3>
-The first point to notice in eqn. $$\eqref{eqn:Intensity}$$ is that the result of each measurement is independent of the choice of a global phase, as the magnitude squared is calculated. Since both, $a_i$ and $b_i$, are permitted freely to choose their phase, a single relative phase suffices and we can set $a_i$ to always be real valued without loss of generality. Next we can separate the problem into a real and an imaginary part, which are added in quadrature. We therefore first analyze the real part of the problem by also assuming $x$ and $b_i$ to be real.
-To gain some insight, we now further assume that all $N$ experiments refer to the same choice of $a_i$. Hence we can replace eqn. $$\eqref{eqn:Intensity}$$ with a single experiment using all the available photon budget at once:
+The first point to notice in eqn. \eqref{eqn:Intensity} is that the result of each measurement is independent of the choice of a global phase, as the magnitude squared is calculated. Since both, $a_i$ and $b_i$, are permitted freely to choose their phase, a single relative phase suffices and we can set $a_i$ to always be real valued without loss of generality. Next we can separate the problem into a real and an imaginary part, which are added in quadrature. We therefore first analyze the real part of the problem by also assuming $x$ and $b_i$ to be real.
+To gain some insight, we now further assume that all $N$ experiments refer to the same choice of $a_i$. Hence we can replace eqn. \eqref{eqn:Intensity} with a single experiment using all the available photon budget at once:
 \begin{equation}
 y=|\sqrt{A} x + b|^2
 \label{eqn:OneStep}
 \end{equation}
 
-<p>The infinite SNR in a nulling experiment as stated in eqn. $$\eqref{eqn:SNR}$$ does not consider that we may have estimated $x$ wrongly and thus chose a wrong value for $a$, but nevertheless obtained zero photons in our measurement due to the <em>limited</em> overall photon budget. </p>
+<p>The infinite SNR in a nulling experiment as stated in eqn. \eqref{eqn:SNR} does not consider that we may have estimated $x$ wrongly and thus chose a wrong value for $a$, but nevertheless obtained zero photons in our measurement due to the <em>limited</em> overall photon budget. </p>
 
 <p>In our work, we aim to compare the estimation of $x$ by <em>nulling</em> (setting $b=-\sqrt{A} x$) with another scheme where $b\gg1$. This principle, termed <em>optical amplification</em>, is known for example in optical coherence tomography (OCT) as a method to eliminate read noise [<a class="citation" href="https://patents.google.com/patent/US6900943B2/en" title="Optical amplification in coherent optical frequency modulated continuous wave reflectometry; Peter E. Andersen, Anders Bjarklev, Andrea Tycho; US Patent 6900943B2">Andersen 2001</a>]. Here we do not analyze it in the context of read noise, rather as a general interferometric technique and compare it with the nulling scheme as suggested by York et al.</p>
 
@@ -147,14 +147,14 @@ This is not trivial: the nulling scheme (I) is a hypothesis test. It is able to 
 <h4>A new thought experiment</h4>
 <p>To nevertheless be able to compare both schemes on equal terms we designed the following hypothesis testing scheme: for a given (unknown) $x$ the range $x \in [-1,1]$ is tested in equal steps $S_x$ searching for $x = \hat{x}$. For the nulling scheme, consistency is given by detecting zero photons, whereas for the amplification scheme we have to define a different consistency rule: At each $x$ many such tests are performed and we evaluate and plot the frequency of consistent results.</p>
 
-<p>In this case, being consistent means that the detected number of photons ($Y$) is within a small distance $\Delta y$ from the predicted number of photons (assuming $\hat{x} = x$), given the chosen value of $b$. To further simplify our analysis, we approximate $\Delta y$ to be small enough that there is no significant change of the probability of detecting photons over this range, i.e. the probability of detecting photons in the range $Y = y\pm\Delta y/2$ is approximately given by $\Delta y P(y|y)$. Since we further assumed $b$ to be large, we can approximate the Poisson distribution (eqn. $$\eqref{eqn:Poisson}$$) by a Gaussian probability density, with a variance equal to the expectancy:</p>
+<p>In this case, being consistent means that the detected number of photons ($Y$) is within a small distance $\Delta y$ from the predicted number of photons (assuming $\hat{x} = x$), given the chosen value of $b$. To further simplify our analysis, we approximate $\Delta y$ to be small enough that there is no significant change of the probability of detecting photons over this range, i.e. the probability of detecting photons in the range $Y = y\pm\Delta y/2$ is approximately given by $\Delta y P(y|y)$. Since we further assumed $b$ to be large, we can approximate the Poisson distribution (eqn. \eqref{eqn:Poisson}) by a Gaussian probability density, with a variance equal to the expectancy:</p>
 \begin{equation}
 P(Y|y) = \frac{\exp{\left(\frac{-|Y-y|^2}{2y}\right)}}{\sqrt{2\pi y}}
 \label{eqn:Gaussian}
 \end{equation}
 
 <h4>Comparing both inference schemes</h4>
-<p>Now we are able to compare the quality to estimate $\hat{x}$ in our thought experiments. For the nulling scheme, we obtain the probability to measure zero photons according to eqn. $$\eqref{eqn:Poisson}$$ as:</p> 
+<p>Now we are able to compare the quality to estimate $\hat{x}$ in our thought experiments. For the nulling scheme, we obtain the probability to measure zero photons according to eqn. \eqref{eqn:Poisson} as:</p> 
 \begin{eqnarray}
     y & = & |\sqrt{A} x - \sqrt{A} \hat{x}|^2 = A |x-\hat{x}|^2 \nonumber \\
     P(Y|y) & = & \frac{\left( A |x - \hat{x}|^2\right)^Y}{Y !} \exp(-A |x - \hat{x}|^2) \nonumber \\
@@ -166,7 +166,7 @@ P(Y|y) = \frac{\exp{\left(\frac{-|Y-y|^2}{2y}\right)}}{\sqrt{2\pi y}}
         y = |\sqrt{A}x - \sqrt{A}b'|^2 = A |x - b'|
 \end{equation}
 
-<p>We can express eqn. $$\eqref{eqn:Gaussian}$$ as:</p>
+<p>We can express eqn. \eqref{eqn:Gaussian} as:</p>
 \begin{eqnarray}
     P(Y|y) & = & \Delta y \frac{\exp(-\frac{|Y-y|^2}{2y})}{\sqrt{2\pi y}} \nonumber \\
     & = & \Delta y \frac{\exp(-\frac{|A |x-b'|^2-A |\hat{x}-b'|^2|^2}{2A |\hat{x}-b'|^2})}{\sqrt{2\pi A} |\hat{x}-b'|}
@@ -198,14 +198,14 @@ P(Y|y) = \frac{\exp{\left(\frac{-|Y-y|^2}{2y}\right)}}{\sqrt{2\pi y}}
 <p>Leading to the interesting result that the estimation based on the amplification scheme seems to be more precise than the estimation based on interferometric nulling.</p>
 
 <h4>Estimating from each individual measurement</h4>
-<p>However, this leaves us with the problem that the overall success rate of our amplification hypothesis test is fairly low, since $\Delta y$ has to be chosen much smaller than the width of the probability distribution to render our approximation in eqn. $$\eqref{eq:approximation}$$ valid. 
+<p>However, this leaves us with the problem that the overall success rate of our amplification hypothesis test is fairly low, since $\Delta y$ has to be chosen much smaller than the width of the probability distribution to render our approximation in eqn. \eqref{eq:approximation} valid. 
 Yet, if we chose a different estimation scheme, using a large reference $b$, but estimating $\hat{x}$ directly from each measurement as:</p>
 \begin{eqnarray}
 y & = & A|x-b'|^2 \nonumber \\
 \rightarrow \hat{x} & = & b'-\sqrt{y/A}
 \end{eqnarray}
 
-<p>for large positive $b'$. This yields a probability distribution equal to the hypothesis testing scheme (eqn. $$\eqref{eq:approximation}$$), with the only difference that in each case a solution is found leading to an estimate and there is no experiment which gets rejected by the hypothesis test. This is in all respects superior compared to the hypothesis testing scheme using interferometric nulling. Not only is an estimation possible every single time, but even for the cases where the experimental outcome is not rejected, its estimate is on average closer to the true value $x$.</p>
+<p>for large positive $b'$. This yields a probability distribution equal to the hypothesis testing scheme (eqn. \eqref{eq:approximation}), with the only difference that in each case a solution is found leading to an estimate and there is no experiment which gets rejected by the hypothesis test. This is in all respects superior compared to the hypothesis testing scheme using interferometric nulling. Not only is an estimation possible every single time, but even for the cases where the experimental outcome is not rejected, its estimate is on average closer to the true value $x$.</p>
 
 <h3>Numerical results</h3>
 <p>To verify our theoretical findings, we did some numerical evaluation of both inferring schemes.</p>
